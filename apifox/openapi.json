@@ -15,181 +15,6 @@
     }
   ],
   "paths": {
-    "/pet/{petId}": {
-      "get": {
-        "summary": "查询宠物详情",
-        "deprecated": false,
-        "description": "",
-        "tags": [
-          "示例项目",
-          "宠物"
-        ],
-        "parameters": [
-          {
-            "name": "petId",
-            "in": "path",
-            "description": "宠物 ID",
-            "required": true,
-            "example": "1",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer",
-                      "minimum": 0,
-                      "maximum": 0,
-                      "description": "状态码"
-                    },
-                    "data": {
-                      "$ref": "#/components/schemas/Pet",
-                      "description": "宠物信息"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "data"
-                  ]
-                },
-                "example": {
-                  "code": 0,
-                  "data": {
-                    "name": "Hello Kity",
-                    "photoUrls": [
-                      "http://dummyimage.com/400x400"
-                    ],
-                    "id": 3,
-                    "category": {
-                      "id": 71,
-                      "name": "Cat"
-                    },
-                    "tags": [
-                      {
-                        "id": 22,
-                        "name": "Cat"
-                      }
-                    ],
-                    "status": "sold"
-                  }
-                }
-              }
-            },
-            "headers": {}
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "message": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "message"
-                  ]
-                }
-              }
-            },
-            "headers": {}
-          },
-          "404": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "message": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "message"
-                  ]
-                }
-              }
-            },
-            "headers": {}
-          }
-        },
-        "security": []
-      },
-      "delete": {
-        "summary": "删除宠物信息",
-        "deprecated": false,
-        "description": "",
-        "tags": [
-          "示例项目",
-          "宠物"
-        ],
-        "parameters": [
-          {
-            "name": "petId",
-            "in": "path",
-            "description": "Pet id to delete",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api_key",
-            "in": "header",
-            "description": "",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer",
-                      "minimum": 0,
-                      "maximum": 0
-                    }
-                  },
-                  "required": [
-                    "code"
-                  ]
-                },
-                "example": {
-                  "code": 0
-                }
-              }
-            },
-            "headers": {}
-          }
-        },
-        "security": []
-      }
-    },
     "/pet": {
       "post": {
         "summary": "新建宠物信息",
@@ -358,6 +183,63 @@
                 "schema": {
                   "type": "object",
                   "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/pet/{petId}": {
+      "delete": {
+        "summary": "删除宠物信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "示例项目",
+          "宠物"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "description": "Pet id to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api_key",
+            "in": "header",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 0
+                    }
+                  },
+                  "required": [
+                    "code"
+                  ]
+                },
+                "example": {
+                  "code": 0
                 }
               }
             },
