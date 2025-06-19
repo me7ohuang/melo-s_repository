@@ -473,14 +473,14 @@
         "required": [
           "name",
           "photoUrls",
-          "id",
+          "id_main",
           "category",
           "tags",
           "status"
         ],
         "type": "object",
         "properties": {
-          "id": {
+          "id_main": {
             "type": "integer",
             "format": "int64",
             "minimum": 1,
