@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "多模块&Git备份",
+    "title": "🦄 多模块&多分支&Github备份",
     "description": "这里是 OAS 描述...",
     "version": "1.0.0",
     "x-ext-example": "这里是示例 OAS info 的扩展"
