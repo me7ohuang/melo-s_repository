@@ -32,7 +32,7 @@
             "required": true,
             "example": "c_on_gp_value",
             "schema": {
-              "type": "string"
+              "default": "c_on_gp_defult"
             }
           },
           {
@@ -42,7 +42,7 @@
             "required": false,
             "example": "cookie_same_1_gp",
             "schema": {
-              "type": "string"
+              "default": "cookie_same_1_gp_defult"
             }
           },
           {
@@ -52,7 +52,7 @@
             "required": false,
             "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn",
             "schema": {
-              "type": "string"
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn"
             }
           },
           {
@@ -391,7 +391,7 @@
             "required": true,
             "example": "c_on_gp_value",
             "schema": {
-              "type": "string"
+              "default": "c_on_gp_defult"
             }
           },
           {
@@ -401,7 +401,7 @@
             "required": false,
             "example": "cookie_same_1_gp",
             "schema": {
-              "type": "string"
+              "default": "cookie_same_1_gp_defult"
             }
           },
           {
@@ -411,7 +411,7 @@
             "required": false,
             "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn",
             "schema": {
-              "type": "string"
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn"
             }
           },
           {
@@ -722,7 +722,7 @@
             "required": true,
             "example": "c_on_gp_value",
             "schema": {
-              "type": "string"
+              "default": "c_on_gp_defult"
             }
           },
           {
@@ -732,7 +732,7 @@
             "required": false,
             "example": "cookie_same_1_gp",
             "schema": {
-              "type": "string"
+              "default": "cookie_same_1_gp_defult"
             }
           },
           {
@@ -742,7 +742,7 @@
             "required": false,
             "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn",
             "schema": {
-              "type": "string"
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn"
             }
           },
           {
@@ -1016,7 +1016,7 @@
             "required": true,
             "example": "c_on_gp_value",
             "schema": {
-              "type": "string"
+              "default": "c_on_gp_defult"
             }
           },
           {
@@ -1026,7 +1026,7 @@
             "required": false,
             "example": "cookie_same_1_gp",
             "schema": {
-              "type": "string"
+              "default": "cookie_same_1_gp_defult"
             }
           },
           {
@@ -1036,7 +1036,7 @@
             "required": false,
             "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn",
             "schema": {
-              "type": "string"
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn"
             }
           },
           {
@@ -1362,9 +1362,7 @@
           "name": {
             "type": "string",
             "description": "名称",
-            "examples": [
-              "doggie"
-            ]
+            "example": "doggie"
           },
           "photoUrls": {
             "type": "array",
