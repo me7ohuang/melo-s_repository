@@ -6,10 +6,1426 @@
     "version": "1.0.0",
     "x-ext-example": "这里是示例 OAS info 的扩展"
   },
-  "tags": [],
-  "paths": {},
+  "tags": [
+    {
+      "name": "示例项目"
+    },
+    {
+      "name": "宠物"
+    }
+  ],
+  "paths": {
+    "/pet": {
+      "post": {
+        "summary": "新建宠物信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "示例项目",
+          "宠物"
+        ],
+        "parameters": [
+          {
+            "name": "c_on_gp",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填",
+            "required": true,
+            "example": "c_on_gp_value",
+            "schema": {
+              "default": "c_on_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_same_1",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "cookie_same_1_gp",
+            "schema": {
+              "default": "cookie_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_long",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn",
+            "schema": {
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn"
+            }
+          },
+          {
+            "name": "c1",
+            "in": "cookie",
+            "description": "勿改-测试",
+            "required": false,
+            "example": "cookieInGlobalCookie",
+            "schema": {
+              "type": "string",
+              "default": "cookieInGlobalCookie_defult"
+            }
+          },
+          {
+            "name": "c_on_gp_request_off",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "c_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "c_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_cparam_use_glo",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_env",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_prior",
+            "in": "cookie",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "q_on_gp",
+            "in": "query",
+            "description": "全局说明~默认启用+必填",
+            "required": true,
+            "example": "q_on_gp_value",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query_same_1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "query_same_1_gp",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q_on_gp_request_off",
+            "in": "query",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "q_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "q_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_qparam_use_glo",
+            "in": "query",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_env",
+            "in": "query",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_prior",
+            "in": "query",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "h_on_gp",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填",
+            "required": true,
+            "example": "h_on_gp_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_defult"
+            }
+          },
+          {
+            "name": "header_same_1",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "header_same_1_gp",
+            "schema": {
+              "type": "string",
+              "default": "header_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "plat-form",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "{{header}}",
+            "schema": {
+              "type": "string",
+              "default": "{{header}}_defult"
+            }
+          },
+          {
+            "name": "Cookie",
+            "in": "header",
+            "description": "勿改-用于测试cokie拼接",
+            "required": false,
+            "example": "c1=cookieInGlobalHeader",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "h_on_gp_request_off",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "h_on_gp_case_off_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_case_off_value"
+            }
+          },
+          {
+            "name": "glo_hparam_use_glo",
+            "in": "header",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_env",
+            "in": "header",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_prior",
+            "in": "header",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "header_long",
+            "in": "header",
+            "description": "",
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end",
+            "schema": {
+              "type": "string",
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "description": "宠物名",
+                    "example": "Hello Kitty",
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "宠物销售状态",
+                    "example": "sold",
+                    "type": "string"
+                  },
+                  "b_on_gp": {
+                    "description": "全局说明~默认启用+必填",
+                    "example": "b_on_gp_value",
+                    "type": "string"
+                  },
+                  "body_same_1": {
+                    "description": "优先级",
+                    "example": "body_same_1_gp",
+                    "type": "string"
+                  },
+                  "test": {
+                    "example": "000",
+                    "type": "string"
+                  },
+                  "b_on_gp_request_off": {
+                    "type": "string",
+                    "default": "b_on_gp_request_off_value",
+                    "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+                    "example": "b_on_gp_request_off_value"
+                  },
+                  "glo_bparam_use_glo": {
+                    "type": "string",
+                    "default": "{{id_glo}}",
+                    "example": "{{id_glo}}"
+                  },
+                  "glo_bparam_use_env": {
+                    "type": "string",
+                    "default": "{{id_env}}",
+                    "example": "{{id_env}}"
+                  },
+                  "glo_bparam_use_prior": {
+                    "type": "string",
+                    "default": "{{priority_env}}",
+                    "example": "{{priority_env}}"
+                  }
+                },
+                "required": [
+                  "name",
+                  "status",
+                  "b_on_gp",
+                  "b_on_gp_request_off"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 0
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Pet"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "data"
+                  ]
+                },
+                "example": {
+                  "code": 0,
+                  "data": {
+                    "name": "Hello Kity",
+                    "photoUrls": [
+                      "http://dummyimage.com/400x400"
+                    ],
+                    "id": 3,
+                    "category": {
+                      "id": 71,
+                      "name": "Cat"
+                    },
+                    "tags": [
+                      {
+                        "id": 22,
+                        "name": "Cat"
+                      }
+                    ],
+                    "status": "sold"
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "summary": "修改宠物信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "示例项目",
+          "宠物"
+        ],
+        "parameters": [
+          {
+            "name": "c_on_gp",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填",
+            "required": true,
+            "example": "c_on_gp_value",
+            "schema": {
+              "default": "c_on_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_same_1",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "cookie_same_1_gp",
+            "schema": {
+              "default": "cookie_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_long",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn",
+            "schema": {
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn"
+            }
+          },
+          {
+            "name": "c1",
+            "in": "cookie",
+            "description": "勿改-测试",
+            "required": false,
+            "example": "cookieInGlobalCookie",
+            "schema": {
+              "type": "string",
+              "default": "cookieInGlobalCookie_defult"
+            }
+          },
+          {
+            "name": "c_on_gp_request_off",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "c_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "c_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_cparam_use_glo",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_env",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_prior",
+            "in": "cookie",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "q_on_gp",
+            "in": "query",
+            "description": "全局说明~默认启用+必填",
+            "required": true,
+            "example": "q_on_gp_value",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query_same_1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "query_same_1_gp",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q_on_gp_request_off",
+            "in": "query",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "q_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "q_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_qparam_use_glo",
+            "in": "query",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_env",
+            "in": "query",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_prior",
+            "in": "query",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "h_on_gp",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填",
+            "required": true,
+            "example": "h_on_gp_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_defult"
+            }
+          },
+          {
+            "name": "header_same_1",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "header_same_1_gp",
+            "schema": {
+              "type": "string",
+              "default": "header_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "plat-form",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "{{header}}",
+            "schema": {
+              "type": "string",
+              "default": "{{header}}_defult"
+            }
+          },
+          {
+            "name": "Cookie",
+            "in": "header",
+            "description": "勿改-用于测试cokie拼接",
+            "required": false,
+            "example": "c1=cookieInGlobalHeader",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "h_on_gp_request_off",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "h_on_gp_case_off_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_case_off_value"
+            }
+          },
+          {
+            "name": "glo_hparam_use_glo",
+            "in": "header",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_env",
+            "in": "header",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_prior",
+            "in": "header",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "header_long",
+            "in": "header",
+            "description": "",
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end",
+            "schema": {
+              "type": "string",
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Pet"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "data"
+                  ]
+                },
+                "example": {
+                  "code": 0,
+                  "data": {
+                    "name": "Hello Kity",
+                    "photoUrls": [
+                      "http://dummyimage.com/400x400"
+                    ],
+                    "id": 3,
+                    "category": {
+                      "id": 71,
+                      "name": "Cat"
+                    },
+                    "tags": [
+                      {
+                        "id": 22,
+                        "name": "Cat"
+                      }
+                    ],
+                    "status": "sold"
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "405": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/pet/{petId}": {
+      "delete": {
+        "summary": "删除宠物信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "示例项目",
+          "宠物"
+        ],
+        "parameters": [
+          {
+            "name": "c_on_gp",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填",
+            "required": true,
+            "example": "c_on_gp_value",
+            "schema": {
+              "default": "c_on_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_same_1",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "cookie_same_1_gp",
+            "schema": {
+              "default": "cookie_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_long",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn",
+            "schema": {
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn"
+            }
+          },
+          {
+            "name": "c1",
+            "in": "cookie",
+            "description": "勿改-测试",
+            "required": false,
+            "example": "cookieInGlobalCookie",
+            "schema": {
+              "type": "string",
+              "default": "cookieInGlobalCookie_defult"
+            }
+          },
+          {
+            "name": "c_on_gp_request_off",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "c_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "c_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_cparam_use_glo",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_env",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_prior",
+            "in": "cookie",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "petId",
+            "in": "path",
+            "description": "Pet id to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q_on_gp",
+            "in": "query",
+            "description": "全局说明~默认启用+必填",
+            "required": true,
+            "example": "q_on_gp_value",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query_same_1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "query_same_1_gp",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q_on_gp_request_off",
+            "in": "query",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "q_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "q_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_qparam_use_glo",
+            "in": "query",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_env",
+            "in": "query",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_prior",
+            "in": "query",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "api_key",
+            "in": "header",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "h_on_gp",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填",
+            "required": true,
+            "example": "h_on_gp_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_defult"
+            }
+          },
+          {
+            "name": "header_same_1",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "header_same_1_gp",
+            "schema": {
+              "type": "string",
+              "default": "header_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "plat-form",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "{{header}}",
+            "schema": {
+              "type": "string",
+              "default": "{{header}}_defult"
+            }
+          },
+          {
+            "name": "Cookie",
+            "in": "header",
+            "description": "勿改-用于测试cokie拼接",
+            "required": false,
+            "example": "c1=cookieInGlobalHeader",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "h_on_gp_request_off",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "h_on_gp_case_off_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_case_off_value"
+            }
+          },
+          {
+            "name": "glo_hparam_use_glo",
+            "in": "header",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_env",
+            "in": "header",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_prior",
+            "in": "header",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "header_long",
+            "in": "header",
+            "description": "",
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end",
+            "schema": {
+              "type": "string",
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 0
+                    }
+                  },
+                  "required": [
+                    "code"
+                  ]
+                },
+                "example": {
+                  "code": 0
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/pet/findByStatus": {
+      "get": {
+        "summary": "根据状态查找宠物列表",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "示例项目",
+          "宠物"
+        ],
+        "parameters": [
+          {
+            "name": "c_on_gp",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填",
+            "required": true,
+            "example": "c_on_gp_value",
+            "schema": {
+              "default": "c_on_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_same_1",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "cookie_same_1_gp",
+            "schema": {
+              "default": "cookie_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_long",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn",
+            "schema": {
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn"
+            }
+          },
+          {
+            "name": "c1",
+            "in": "cookie",
+            "description": "勿改-测试",
+            "required": false,
+            "example": "cookieInGlobalCookie",
+            "schema": {
+              "type": "string",
+              "default": "cookieInGlobalCookie_defult"
+            }
+          },
+          {
+            "name": "c_on_gp_request_off",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "c_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "c_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_cparam_use_glo",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_env",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_prior",
+            "in": "cookie",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Status values that need to be considered for filter",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q_on_gp",
+            "in": "query",
+            "description": "全局说明~默认启用+必填",
+            "required": true,
+            "example": "q_on_gp_value",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query_same_1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "query_same_1_gp",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q_on_gp_request_off",
+            "in": "query",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "q_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "q_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_qparam_use_glo",
+            "in": "query",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_env",
+            "in": "query",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_prior",
+            "in": "query",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "h_on_gp",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填",
+            "required": true,
+            "example": "h_on_gp_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_defult"
+            }
+          },
+          {
+            "name": "header_same_1",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "header_same_1_gp",
+            "schema": {
+              "type": "string",
+              "default": "header_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "plat-form",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "{{header}}",
+            "schema": {
+              "type": "string",
+              "default": "{{header}}_defult"
+            }
+          },
+          {
+            "name": "Cookie",
+            "in": "header",
+            "description": "勿改-用于测试cokie拼接",
+            "required": false,
+            "example": "c1=cookieInGlobalHeader",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "h_on_gp_request_off",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "h_on_gp_case_off_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_case_off_value"
+            }
+          },
+          {
+            "name": "glo_hparam_use_glo",
+            "in": "header",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_env",
+            "in": "header",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_prior",
+            "in": "header",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "header_long",
+            "in": "header",
+            "description": "",
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end",
+            "schema": {
+              "type": "string",
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pet"
+                  }
+                },
+                "example": {
+                  "code": 0,
+                  "data": [
+                    {
+                      "name": "Hello Kity",
+                      "photoUrls": [
+                        "http://dummyimage.com/400x400"
+                      ],
+                      "id": 3,
+                      "category": {
+                        "id": 71,
+                        "name": "Cat"
+                      },
+                      "tags": [
+                        {
+                          "id": 22,
+                          "name": "Cat"
+                        }
+                      ],
+                      "status": "sold"
+                    },
+                    {
+                      "name": "White Dog",
+                      "photoUrls": [
+                        "http://dummyimage.com/400x400"
+                      ],
+                      "id": 3,
+                      "category": {
+                        "id": 71,
+                        "name": "Dog"
+                      },
+                      "tags": [
+                        {
+                          "id": 22,
+                          "name": "Dog"
+                        }
+                      ],
+                      "status": "sold"
+                    }
+                  ]
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "code"
+                  ]
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
   "components": {
-    "schemas": {},
+    "schemas": {
+      "Pet": {
+        "required": [
+          "name",
+          "photoUrls",
+          "id_main",
+          "category",
+          "tags",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "id_main": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1,
+            "description": "宠物ID编号"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category",
+            "description": "分组"
+          },
+          "name": {
+            "type": "string",
+            "description": "名称",
+            "example": "doggie"
+          },
+          "photoUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "照片URL"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            },
+            "description": "标签"
+          },
+          "status": {
+            "type": "string",
+            "description": "宠物销售状态",
+            "enum": [
+              "available",
+              "pending",
+              "sold"
+            ]
+          }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1,
+            "description": "分组ID编号"
+          },
+          "name": {
+            "type": "string",
+            "description": "分组名称"
+          }
+        },
+        "xml": {
+          "name": "Category"
+        }
+      },
+      "Tag": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1,
+            "description": "标签ID编号"
+          },
+          "name": {
+            "type": "string",
+            "description": "标签名称"
+          }
+        },
+        "xml": {
+          "name": "Tag"
+        }
+      }
+    },
     "securitySchemes": {}
   },
   "servers": [],
