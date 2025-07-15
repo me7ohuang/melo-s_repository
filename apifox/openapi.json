@@ -15,6 +15,575 @@
     }
   ],
   "paths": {
+    "/ref/other_module/1": {
+      "get": {
+        "summary": "/ref/other_module/1",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "示例项目"
+        ],
+        "parameters": [
+          {
+            "name": "c_on_gp",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填",
+            "required": true,
+            "example": "c_on_gp_value",
+            "schema": {
+              "default": "c_on_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_same_1",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "cookie_same_1_gp",
+            "schema": {
+              "default": "cookie_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_long",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn",
+            "schema": {
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn"
+            }
+          },
+          {
+            "name": "c1",
+            "in": "cookie",
+            "description": "勿改-测试",
+            "required": false,
+            "example": "cookieInGlobalCookie",
+            "schema": {
+              "type": "string",
+              "default": "cookieInGlobalCookie_defult"
+            }
+          },
+          {
+            "name": "c_on_gp_request_off",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "c_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "c_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_cparam_use_glo",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_env",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_prior",
+            "in": "cookie",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "q_on_gp",
+            "in": "query",
+            "description": "全局说明~默认启用+必填",
+            "required": true,
+            "example": "q_on_gp_value",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query_same_1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "query_same_1_gp",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q_on_gp_request_off",
+            "in": "query",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "q_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "q_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_qparam_use_glo",
+            "in": "query",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_env",
+            "in": "query",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_prior",
+            "in": "query",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "h_on_gp",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填",
+            "required": true,
+            "example": "h_on_gp_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_defult"
+            }
+          },
+          {
+            "name": "header_same_1",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "header_same_1_gp",
+            "schema": {
+              "type": "string",
+              "default": "header_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "plat-form",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "{{header}}",
+            "schema": {
+              "type": "string",
+              "default": "{{header}}_defult"
+            }
+          },
+          {
+            "name": "Cookie",
+            "in": "header",
+            "description": "勿改-用于测试cokie拼接",
+            "required": false,
+            "example": "c1=cookieInGlobalHeader",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "h_on_gp_request_off",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "h_on_gp_case_off_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_case_off_value"
+            }
+          },
+          {
+            "name": "glo_hparam_use_glo",
+            "in": "header",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_env",
+            "in": "header",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_prior",
+            "in": "header",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "header_long",
+            "in": "header",
+            "description": "",
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end",
+            "schema": {
+              "type": "string",
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {},
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/ref/current_module/2": {
+      "get": {
+        "summary": "/ref/current_module/2",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "示例项目"
+        ],
+        "parameters": [
+          {
+            "name": "c_on_gp",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填",
+            "required": true,
+            "example": "c_on_gp_value",
+            "schema": {
+              "default": "c_on_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_same_1",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "cookie_same_1_gp",
+            "schema": {
+              "default": "cookie_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "cookie_long",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn",
+            "schema": {
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn"
+            }
+          },
+          {
+            "name": "c1",
+            "in": "cookie",
+            "description": "勿改-测试",
+            "required": false,
+            "example": "cookieInGlobalCookie",
+            "schema": {
+              "type": "string",
+              "default": "cookieInGlobalCookie_defult"
+            }
+          },
+          {
+            "name": "c_on_gp_request_off",
+            "in": "cookie",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "c_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "c_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_cparam_use_glo",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_env",
+            "in": "cookie",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_cparam_use_prior",
+            "in": "cookie",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "q_on_gp",
+            "in": "query",
+            "description": "全局说明~默认启用+必填",
+            "required": true,
+            "example": "q_on_gp_value",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query_same_1",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "query_same_1_gp",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q_on_gp_request_off",
+            "in": "query",
+            "description": "勿改-测试：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "q_on_gp_request_off_value",
+            "schema": {
+              "type": "string",
+              "default": "q_on_gp_request_off_value"
+            }
+          },
+          {
+            "name": "glo_qparam_use_glo",
+            "in": "query",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_env",
+            "in": "query",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_qparam_use_prior",
+            "in": "query",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "h_on_gp",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填",
+            "required": true,
+            "example": "h_on_gp_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_defult"
+            }
+          },
+          {
+            "name": "header_same_1",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "header_same_1_gp",
+            "schema": {
+              "type": "string",
+              "default": "header_same_1_gp_defult"
+            }
+          },
+          {
+            "name": "plat-form",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "{{header}}",
+            "schema": {
+              "type": "string",
+              "default": "{{header}}_defult"
+            }
+          },
+          {
+            "name": "Cookie",
+            "in": "header",
+            "description": "勿改-用于测试cokie拼接",
+            "required": false,
+            "example": "c1=cookieInGlobalHeader",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "h_on_gp_request_off",
+            "in": "header",
+            "description": "勿改：全局参数~默认启用+必填+快捷请求/自定义请求不启用",
+            "required": true,
+            "example": "h_on_gp_case_off_value",
+            "schema": {
+              "type": "string",
+              "default": "h_on_gp_case_off_value"
+            }
+          },
+          {
+            "name": "glo_hparam_use_glo",
+            "in": "header",
+            "description": "",
+            "example": "{{id_glo}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_glo}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_env",
+            "in": "header",
+            "description": "",
+            "example": "{{id_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{id_env}}"
+            }
+          },
+          {
+            "name": "glo_hparam_use_prior",
+            "in": "header",
+            "description": "",
+            "example": "{{priority_env}}",
+            "schema": {
+              "type": "string",
+              "default": "{{priority_env}}"
+            }
+          },
+          {
+            "name": "header_long",
+            "in": "header",
+            "description": "",
+            "example": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end",
+            "schema": {
+              "type": "string",
+              "default": "l=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmnl=eBO-G2Fng9CH5uxF2Ofahurza77OSIOYYuPzaNbMiOCP_Xfp5gxlW6pndVL9C31Vh6DWR3-82bJHBeYBcIfEiOp2AJ-YF8Mmn=end"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tag"
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pet"
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "message"
+                  ]
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "M1_scheme1": []
+          }
+        ]
+      }
+    },
     "/pet": {
       "post": {
         "summary": "新建宠物信息",
@@ -1426,7 +1995,12 @@
         }
       }
     },
-    "securitySchemes": {}
+    "securitySchemes": {
+      "M1_scheme1": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
   },
   "servers": [],
   "security": [],
