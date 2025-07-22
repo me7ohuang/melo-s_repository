@@ -205,61 +205,6 @@
         },
         "security": []
       },
-      "delete": {
-        "summary": "删除宠物信息",
-        "deprecated": false,
-        "description": "",
-        "tags": [],
-        "parameters": [
-          {
-            "name": "petId",
-            "in": "path",
-            "description": "Pet id to delete",
-            "required": true,
-            "example": "<long>",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api_key",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "example": "<string>",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            },
-            "headers": {}
-          },
-          "404": {
-            "description": "",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            },
-            "headers": {}
-          }
-        },
-        "security": []
-      },
       "post": {
         "summary": "form-data 方式更新宠物信息",
         "deprecated": false,
@@ -330,60 +275,6 @@
       }
     },
     "/pet": {
-      "post": {
-        "summary": "新建宠物信息",
-        "deprecated": false,
-        "description": "",
-        "tags": [],
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "text/plain": {
-              "schema": {
-                "type": "string"
-              },
-              "example": {
-                "name": "<string>",
-                "photoUrls": [
-                  "<string>",
-                  "<string>"
-                ],
-                "id": "<long>",
-                "category": {
-                  "id": "<long>",
-                  "name": "<string>"
-                },
-                "tags": [
-                  {
-                    "id": "<long>",
-                    "name": "<string>"
-                  },
-                  {
-                    "id": "<long>",
-                    "name": "<string>"
-                  }
-                ],
-                "status": "<string>"
-              }
-            }
-          }
-        },
-        "responses": {
-          "405": {
-            "description": "",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            },
-            "headers": {}
-          }
-        },
-        "security": []
-      },
       "put": {
         "summary": "修改宠物信息",
         "deprecated": false,
@@ -447,6 +338,60 @@
             },
             "headers": {}
           },
+          "405": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "新建宠物信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string"
+              },
+              "example": {
+                "name": "<string>",
+                "photoUrls": [
+                  "<string>",
+                  "<string>"
+                ],
+                "id": "<long>",
+                "category": {
+                  "id": "<long>",
+                  "name": "<string>"
+                },
+                "tags": [
+                  {
+                    "id": "<long>",
+                    "name": "<string>"
+                  },
+                  {
+                    "id": "<long>",
+                    "name": "<string>"
+                  }
+                ],
+                "status": "<string>"
+              }
+            }
+          }
+        },
+        "responses": {
           "405": {
             "description": "",
             "content": {
@@ -60291,6 +60236,61 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "未命名接口",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "a": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "a"
+                ]
+              },
+              "examples": {
+                "1": {
+                  "value": {
+                    "a": "sed cillum do"
+                  },
+                  "summary": "示例 1"
+                },
+                "2": {
+                  "value": {
+                    "a": "Duis Lorem"
+                  },
+                  "summary": "示例 2"
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "",
