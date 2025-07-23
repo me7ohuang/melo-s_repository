@@ -23,17 +23,7 @@
             "in": "path",
             "description": "宠物 ID",
             "required": true,
-            "example": "<long>",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api_key",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "example": "",
+            "example": "7",
             "schema": {
               "type": "string"
             }
@@ -271,7 +261,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/pet": {
@@ -351,8 +345,14 @@
             "headers": {}
           }
         },
-        "security": []
-      },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/client/pet": {
       "post": {
         "summary": "新建宠物信息",
         "deprecated": false,
@@ -361,33 +361,12 @@
         "parameters": [],
         "requestBody": {
           "content": {
-            "text/plain": {
+            "multipart/form-data": {
               "schema": {
-                "type": "string"
+                "type": "object",
+                "properties": {}
               },
-              "example": {
-                "name": "<string>",
-                "photoUrls": [
-                  "<string>",
-                  "<string>"
-                ],
-                "id": "<long>",
-                "category": {
-                  "id": "<long>",
-                  "name": "<string>"
-                },
-                "tags": [
-                  {
-                    "id": "<long>",
-                    "name": "<string>"
-                  },
-                  {
-                    "id": "<long>",
-                    "name": "<string>"
-                  }
-                ],
-                "status": "<string>"
-              }
+              "examples": {}
             }
           }
         },
@@ -405,7 +384,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/pet/findByStatus": {
@@ -566,7 +549,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/pet/{petId};;;": {
@@ -622,7 +609,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/auth/v3/app_access_token/": {
@@ -671,7 +662,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/auth/v3/tenant_access_token/": {
@@ -719,7 +714,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/auth/v3/app_ticket/resend/": {
@@ -767,7 +766,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/auth/v3/app_access_token/internal/": {
@@ -899,7 +902,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/auth/v3/tenant_access_token/internal/": {
@@ -1021,7 +1028,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/authen/v1/access_token": {
@@ -1189,7 +1200,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/authen/v1/index": {
@@ -1245,7 +1260,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/authen/v1/refresh_access_token": {
@@ -1303,7 +1322,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/authen/v1/user_info": {
@@ -1348,7 +1371,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mina/v2/tokenLoginValidate": {
@@ -1460,7 +1487,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/contact/v3/users": {
@@ -9378,7 +9409,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/im/v1/batch_messages/{batch_message_id}": {
@@ -10047,7 +10082,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/ephemeral/v1/send": {
@@ -10254,7 +10293,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/ephemeral/v1/delete": {
@@ -10326,7 +10369,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/im/v1/chats": {
@@ -12104,7 +12151,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/im/v1/chats/{chat_id}/managers/delete_managers": {
@@ -12224,7 +12275,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/im/v1/chats/{chat_id}/announcement": {
@@ -14111,7 +14166,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/drive/permission/member/transfer": {
@@ -14226,7 +14285,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/drive/permission/member/list": {
@@ -14340,7 +14403,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/drive/v1/permissions/{token}/members/{member_id}": {
@@ -14449,7 +14516,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "put": {
         "summary": "更新协作者权限",
@@ -14592,7 +14663,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/drive/permission/member/permitted": {
@@ -14677,7 +14752,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/drive/permission/v2/public/": {
@@ -14792,7 +14871,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/drive/v1/permissions/{token}/public": {
@@ -14932,7 +15015,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/drive/v1/files/{file_token}/statistics": {
@@ -16999,7 +17086,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/doc/v2/{docToken}/content": {
@@ -17089,7 +17180,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/doc/v2/{docToken}/raw_content": {
@@ -17174,7 +17269,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/doc/v2/{docToken}/batch_update": {
@@ -17284,7 +17383,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/doc/v2/meta/{docToken}": {
@@ -17469,7 +17572,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/sheets/v3/spreadsheets": {
@@ -30498,7 +30605,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取访问控制列表",
@@ -30616,7 +30727,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/acls/{acl_id}": {
@@ -30692,7 +30807,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/acls/subscription": {
@@ -30768,7 +30887,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/primary": {
@@ -30914,7 +31037,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars": {
@@ -31040,7 +31167,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取日历列表",
@@ -31187,7 +31318,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}": {
@@ -31253,7 +31388,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取日历",
@@ -31371,7 +31510,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "summary": "更新日历",
@@ -31515,7 +31658,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/search": {
@@ -31637,7 +31784,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/subscribe": {
@@ -31767,7 +31918,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/unsubscribe": {
@@ -31843,7 +31998,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/subscription": {
@@ -31909,7 +32068,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/events": {
@@ -32184,7 +32347,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取日程列表",
@@ -32441,7 +32608,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}": {
@@ -32527,7 +32698,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取日程",
@@ -32782,7 +32957,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "summary": "更新日程",
@@ -33065,7 +33244,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/events/search": {
@@ -33257,7 +33440,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/events/subscription": {
@@ -33333,7 +33520,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/attendees": {
@@ -33573,7 +33764,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取日程参与人列表",
@@ -33744,7 +33939,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/attendees/batch_delete": {
@@ -33846,7 +34045,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/attendees/{attendee_id}/chat_members": {
@@ -33991,7 +34194,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/freebusy/list": {
@@ -34119,7 +34326,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/timeoff_events": {
@@ -34241,7 +34452,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/timeoff_events/{timeoff_event_id}": {
@@ -34326,7 +34541,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/exchange_bindings": {
@@ -34425,7 +34644,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/calendar/v4/exchange_bindings/{exchange_binding_id}": {
@@ -34515,7 +34738,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "exchange解绑",
@@ -34589,7 +34816,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/country/list": {
@@ -35680,7 +35911,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/district/list": {
@@ -37265,7 +37500,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/building/create": {
@@ -37361,7 +37600,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/building/list": {
@@ -37521,7 +37764,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/building/batch_get": {
@@ -37654,7 +37901,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/building/update": {
@@ -37742,7 +37993,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/building/delete": {
@@ -37820,7 +38075,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/building/batch_get_id": {
@@ -37921,7 +38180,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/room/create": {
@@ -38013,7 +38276,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/room/list": {
@@ -38187,7 +38454,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/room/batch_get": {
@@ -38332,7 +38603,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/room/update": {
@@ -38414,7 +38689,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/freebusy/batch_get": {
@@ -38536,7 +38815,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/summary/batch_get": {
@@ -38654,7 +38937,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/instance/reply": {
@@ -38735,7 +39022,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/room/delete": {
@@ -38813,7 +39104,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/meeting_room/room/batch_get_id": {
@@ -38914,7 +39209,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/vc/v1/reserves/apply": {
@@ -41684,7 +41983,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/contact/v1/user/admin_scope/get": {
@@ -41779,7 +42082,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/application/v2/app/visibility": {
@@ -41894,7 +42201,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/application/v1/user/visible_apps": {
@@ -42363,7 +42674,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/application/v3/app/list": {
@@ -42822,7 +43137,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/application/v3/app/update_visibility": {
@@ -42910,7 +43229,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/user/v4/app_admin_user/list": {
@@ -43005,7 +43328,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/pay/v1/paid_scope/check_user": {
@@ -43100,7 +43427,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/pay/v1/order/list": {
@@ -43220,7 +43551,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/mailgroups": {
@@ -43330,7 +43665,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "批量获取邮件组",
@@ -43573,7 +43912,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/mailgroups/{mailgroup_id}": {
@@ -43693,7 +44036,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "summary": "修改邮件组",
@@ -43825,7 +44172,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "put": {
         "summary": "更新邮件组",
@@ -43957,7 +44308,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "删除邮件组",
@@ -44031,7 +44386,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/mailgroups/{mailgroup_id}/members": {
@@ -44161,7 +44520,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "批量获取邮件组成员",
@@ -44269,7 +44632,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/mailgroups/{mailgroup_id}/members/{member_id}": {
@@ -44374,7 +44741,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "删除邮件组成员",
@@ -44458,7 +44829,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/mailgroups/{mailgroup_id}/permission_members": {
@@ -44620,7 +44995,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "批量获取邮件组权限成员",
@@ -44768,7 +45147,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/mailgroups/{mailgroup_id}/permission_members/{permission_member_id}": {
@@ -44893,7 +45276,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "删除邮件组权限成员",
@@ -44977,7 +45364,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/public_mailboxes": {
@@ -45075,7 +45466,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "批量获取公共邮箱",
@@ -45248,7 +45643,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/public_mailboxes/{public_mailbox_id}": {
@@ -45343,7 +45742,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "summary": "修改公共邮箱",
@@ -45448,7 +45851,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "put": {
         "summary": "更新公共邮箱",
@@ -45553,7 +45960,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/public_mailboxes/{public_mailbox_id}/members": {
@@ -45671,7 +46082,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "批量获取公共邮箱成员",
@@ -45818,7 +46233,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/public_mailboxes/{public_mailbox_id}/members/{member_id}": {
@@ -45933,7 +46352,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "删除公共邮箱成员",
@@ -46017,7 +46440,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/mail/v1/public_mailboxes/{public_mailbox_id}/members/clear": {
@@ -46093,7 +46520,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/subscription/subscribe": {
@@ -46171,7 +46602,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/subscription/unsubscribe": {
@@ -46249,7 +46684,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/approval/create": {
@@ -46368,7 +46807,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/approval/get": {
@@ -46540,7 +46983,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/instance/list": {
@@ -46679,7 +47126,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/instance/get": {
@@ -46897,7 +47348,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/instance/create": {
@@ -47028,7 +47483,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/instance/approve": {
@@ -47089,7 +47548,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/instance/reject": {
@@ -47150,7 +47613,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/instance/transfer": {
@@ -47212,7 +47679,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/instance/cancel": {
@@ -47271,7 +47742,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/file/upload": {
@@ -47382,7 +47857,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/instance/search": {
@@ -47481,7 +47960,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/task/search": {
@@ -47580,7 +48063,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/instance/cc": {
@@ -47643,7 +48130,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/approval/openapi/v2/cc/search": {
@@ -47742,7 +48233,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/approval/v4/tasks/query": {
@@ -47863,7 +48358,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/search/v2/data_sources": {
@@ -47977,7 +48476,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "批量获取所有的数据源",
@@ -48116,7 +48619,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/search/v2/data_sources/{data_source_id}": {
@@ -48226,7 +48733,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "summary": "修改数据源信息",
@@ -48314,7 +48825,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "删除数据源",
@@ -48378,7 +48893,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/search/v2/data_sources/{data_source_id}/items": {
@@ -48484,7 +49003,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/search/v2/data_sources/{data_source_id}/items/{item_id}": {
@@ -48659,7 +49182,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "删除数据项",
@@ -48733,7 +49260,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/start_service": {
@@ -48863,7 +49394,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/tickets/{ticket_id}": {
@@ -48918,7 +49453,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "put": {
         "summary": "更新工单详情",
@@ -49063,7 +49602,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/tickets/{ticket_id}/messages": {
@@ -49167,7 +49710,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "post": {
         "summary": "工单发送消息",
@@ -49285,7 +49832,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/ticket_images": {
@@ -49360,7 +49911,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/tickets": {
@@ -49575,7 +50130,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/ticket_customized_fields": {
@@ -49711,7 +50270,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取全部工单自定义字段",
@@ -49754,7 +50317,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/ticket_customized_fields/{id}": {
@@ -49809,7 +50376,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "summary": "更新工单自定义字段",
@@ -49901,7 +50472,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "删除工单自定义字段",
@@ -49975,7 +50550,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/tickets/{ticket_id}/answer_user_query": {
@@ -50058,7 +50637,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/categories": {
@@ -50198,7 +50781,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取全部知识库分类",
@@ -50401,7 +50988,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/categories/{id}": {
@@ -50506,7 +51097,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "summary": "更新知识库分类",
@@ -50605,7 +51200,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "删除知识库分类",
@@ -50679,7 +51278,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/faqs": {
@@ -50805,7 +51408,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取全部知识库详情",
@@ -50848,7 +51455,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/faqs/{id}": {
@@ -50913,7 +51524,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "summary": "修改知识库",
@@ -51031,7 +51646,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "删除知识库",
@@ -51105,7 +51724,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/faqs/search": {
@@ -51190,7 +51813,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/agent_emails": {
@@ -51235,7 +51862,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/agent_skill_rules": {
@@ -51647,7 +52278,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/events/subscribe": {
@@ -51761,7 +52396,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/helpdesk/v1/events/unsubscribe": {
@@ -51862,7 +52501,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/tenant/v2/tenant/query": {
@@ -51907,7 +52550,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/admin/v1/admin_dept_stats": {
@@ -52022,7 +52669,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/admin/v1/admin_user_stats": {
@@ -52147,7 +52798,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/optical_char_recognition/v1/image/basic_recognize": {
@@ -52235,7 +52890,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/translation/v1/text/translate": {
@@ -52330,7 +52989,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/translation/v1/text/detect": {
@@ -52417,7 +53080,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/files/{file_id}/download": {
@@ -52472,7 +53139,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_settings/query": {
@@ -52531,7 +53202,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_settings/modify": {
@@ -52601,7 +53276,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/files/upload": {
@@ -52675,7 +53354,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/groups": {
@@ -52778,7 +53461,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/groups/{group_id}": {
@@ -52833,7 +53520,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取考勤组详情",
@@ -52906,7 +53597,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/shifts": {
@@ -52991,7 +53686,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/shifts/{shift_id}": {
@@ -53046,7 +53745,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取班次详情",
@@ -53099,7 +53802,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/shifts/query": {
@@ -53154,7 +53861,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_stats_datas/query": {
@@ -53229,7 +53940,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_stats_fields/query": {
@@ -53299,7 +54014,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_stats_views/{user_stats_view_id}": {
@@ -53399,7 +54118,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_stats_views/query": {
@@ -53467,7 +54190,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_daily_shifts/query": {
@@ -53528,7 +54255,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_tasks/query": {
@@ -53589,7 +54320,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_flows/query": {
@@ -53650,7 +54385,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_flows/batch_create": {
@@ -53715,7 +54454,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_flows/{user_flow_id}": {
@@ -53780,7 +54523,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_task_remedys/query": {
@@ -53841,7 +54588,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_daily_shifts/batch_create": {
@@ -53906,7 +54657,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_approvals/query": {
@@ -53967,7 +54722,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_approvals": {
@@ -54078,7 +54837,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_task_remedys/query_user_allowed_remedys": {
@@ -54136,7 +54899,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/user_task_remedys": {
@@ -54198,7 +54965,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/attendance/v1/approval_infos/process": {
@@ -54247,7 +55018,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/okr/v1/users/{open_id}/okrs": {
@@ -54358,7 +55133,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/okr/v1/okrs/batch_get": {
@@ -54450,7 +55229,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/okr/v1/users/{user_id}/okrs": {
@@ -54598,7 +55381,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/ehr/v1/employees": {
@@ -54733,7 +55520,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/ehr/v1/attachments/{token}": {
@@ -54788,7 +55579,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/task/v1/tasks": {
@@ -54999,7 +55794,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/task/v1/tasks/{task_id}": {
@@ -55225,7 +56024,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "delete": {
         "summary": "删除任务",
@@ -55289,7 +56092,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取任务详情",
@@ -55472,7 +56279,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/task/v1/tasks/{task_id}/complete": {
@@ -55538,7 +56349,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/task/v1/tasks/{task_id}/uncomplete": {
@@ -55613,7 +56428,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/task/v1/tasks/{task_id}/reminders": {
@@ -55725,7 +56544,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "查询提醒时间列表",
@@ -55844,7 +56667,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/task/v1/tasks/{task_id}/reminders/{reminder_id}": {
@@ -55920,7 +56747,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/task/v1/tasks/{task_id}/followers": {
@@ -56037,7 +56868,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取关注者列表",
@@ -56162,7 +56997,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/task/v1/tasks/{task_id}/followers/{follower_id}": {
@@ -56238,7 +57077,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/task/v1/tasks/{task_id}/collaborators": {
@@ -56355,7 +57198,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "获取协作者列表",
@@ -56480,7 +57327,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/task/v1/tasks/{task_id}/collaborators/{collaborator_id}": {
@@ -56556,7 +57407,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/acs/v1/users/{user_id}": {
@@ -56671,7 +57526,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "summary": "修改用户部分信息",
@@ -56769,7 +57628,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/acs/v1/users": {
@@ -57005,7 +57868,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/acs/v1/users/{user_id}/face": {
@@ -57080,7 +57947,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "get": {
         "summary": "下载人脸图片",
@@ -57143,7 +58014,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/acs/v1/access_records": {
@@ -57273,7 +58148,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/acs/v1/access_records/{access_record_id}/access_photo": {
@@ -57318,7 +58197,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/open-apis/acs/v1/devices": {
@@ -57486,7 +58369,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/v1/login.json": {
@@ -57559,7 +58446,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/pet/{petId}/uploadImage": {
@@ -57647,7 +58538,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/pet/findByTags": {
@@ -57808,7 +58703,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/store/order/{orderId}": {
@@ -58688,7 +59587,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/post": {
@@ -58743,7 +59646,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/put": {
@@ -58777,7 +59684,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/patch": {
@@ -58811,7 +59722,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/delete": {
@@ -58845,7 +59760,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/headers": {
@@ -58945,7 +59864,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/response-headers": {
@@ -59002,7 +59925,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/basic-auth": {
@@ -59060,7 +59987,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/auth/hawk": {
@@ -59255,7 +60186,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/cookies": {
@@ -59299,7 +60234,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/cookies/delete": {
@@ -59364,7 +60303,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/status/200": {
@@ -59398,7 +60341,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/stream/5": {
@@ -59423,7 +60370,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/delay/2": {
@@ -59457,7 +60408,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/encoding/utf8": {
@@ -59482,7 +60437,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/gzip": {
@@ -59506,7 +60465,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/deflate": {
@@ -59530,7 +60493,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/ip": {
@@ -59554,7 +60521,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/now": {
@@ -59579,7 +60550,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/valid": {
@@ -59646,7 +60621,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/format": {
@@ -59691,7 +60670,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/unit": {
@@ -59736,7 +60719,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/add": {
@@ -59781,7 +60768,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/subtract": {
@@ -59826,7 +60817,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/start": {
@@ -59871,7 +60866,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/object": {
@@ -59906,7 +60905,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/before": {
@@ -59951,7 +60954,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/after": {
@@ -59996,7 +61003,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/between": {
@@ -60051,7 +61062,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/time/leap": {
@@ -60086,7 +61101,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/var_get": {
@@ -60131,7 +61150,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/{param_get}": {
@@ -60186,7 +61209,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/test/{encodePath}": {
@@ -60250,7 +61277,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/": {
@@ -60305,7 +61336,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/api/v1/notices": {
@@ -60691,7 +61726,11 @@
             "headers": {}
           }
         },
-        "security": []
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       }
     },
     "/request-test/post/binary": {
@@ -60962,5 +62001,9 @@
     }
   },
   "servers": [],
-  "security": []
+  "security": [
+    {
+      "bearer": []
+    }
+  ]
 }
