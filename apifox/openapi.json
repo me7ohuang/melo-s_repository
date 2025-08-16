@@ -265,9 +265,7 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/M2-schema1"
-              },
+              "schema": {},
               "examples": {}
             }
           }
@@ -277,44 +275,13 @@
             "description": "",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/M2-schema1"
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-200:M2_Resp1": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "",
-                  "type": "object",
-                  "properties": {
-                    "M2_Resp1_item": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string",
-                      "description": "ID 编号"
-                    }
-                  },
-                  "required": [
-                    "M2_Resp1_item",
-                    "id"
-                  ]
-                }
+                "schema": {}
               }
             },
             "headers": {}
           }
         },
-        "security": [
-          {
-            "Auth-Bearer Token": []
-          }
-        ]
+        "security": []
       }
     },
     "/ref/current_module/2": {
@@ -603,31 +570,6 @@
                   "required": [
                     "code",
                     "message"
-                  ]
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-200:M2_Resp1": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "",
-                  "type": "object",
-                  "properties": {
-                    "M2_Resp1_item": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string",
-                      "description": "ID 编号"
-                    }
-                  },
-                  "required": [
-                    "M2_Resp1_item",
-                    "id"
                   ]
                 }
               }
@@ -2051,29 +1993,9 @@
         "xml": {
           "name": "Tag"
         }
-      },
-      "M2-schema1": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "ID 编号"
-          },
-          "M2-schema1": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id",
-          "M2-schema1"
-        ]
       }
     },
     "securitySchemes": {
-      "Auth-Bearer Token": {
-        "type": "http",
-        "scheme": "bearer"
-      },
       "M1_scheme1": {
         "type": "http",
         "scheme": "bearer"
