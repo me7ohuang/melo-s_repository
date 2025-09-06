@@ -283,31 +283,6 @@
               }
             },
             "headers": {}
-          },
-          "x-200:M2_Resp1": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "",
-                  "type": "object",
-                  "properties": {
-                    "M2_Resp1_item": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string",
-                      "description": "ID 编号"
-                    }
-                  },
-                  "required": [
-                    "M2_Resp1_item",
-                    "id"
-                  ]
-                }
-              }
-            },
-            "headers": {}
           }
         },
         "security": [
@@ -581,54 +556,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Pet"
-                }
-              }
-            },
-            "headers": {}
-          },
-          "404": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "message": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "message"
-                  ]
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-200:M2_Resp1": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "",
-                  "type": "object",
-                  "properties": {
-                    "M2_Resp1_item": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string",
-                      "description": "ID 编号"
-                    }
-                  },
-                  "required": [
-                    "M2_Resp1_item",
-                    "id"
-                  ]
                 }
               }
             },
