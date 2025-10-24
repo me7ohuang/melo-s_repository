@@ -1,0 +1,1653 @@
+openapi: 3.0.1
+info:
+  title: 🦄 多模块&多分支&Github备份-回归
+  description: null
+  version: 1.0.0
+tags:
+  - name: UIDisplayTest
+  - name: emoji😸(*^▽^*)😊
+  - name: echo $PATH
+  - name: include
+paths:
+  /regression/api_status/developing/{p_string}/{p_int}/{p_number}?query_fixed=q_fixed&query_string=sss:
+    post:
+      summary: 1_开发中_全参数测试
+      deprecated: false
+      description: |
+        该接口：有责任人、标签
+        [1_测试中43785151](api-317122159)
+        [1_不存在](api-3525765)
+        [文档跳转_338429](doc-338429)
+        [文档不存在](doc-338480)
+
+
+
+        ```mermaid
+        graph TD
+        Start --> Stop
+        ```
+
+        ```mermaid
+        classDiagram
+        Animal <|-- Duck
+        Animal <|-- Fish
+        Animal <|-- Zebra
+        Animal : +int age
+        Animal : +String gender
+        Animal: +isMammal()
+        Animal: +mate()
+        class Duck{
+        +String beakColor
+        +swim()
+        +quack()
+        }
+        class Fish{
+        -int sizeInFeet
+        -canEat()
+        }
+        class Zebra{
+        +bool is_wild
+        +run()
+        }
+        ```
+      operationId: test0001
+      tags:
+        - UIDisplayTest
+        - emoji😸(*^▽^*)😊
+        - echo $PATH
+        - include
+      parameters:
+        - name: cookei_api_on
+          in: cookie
+          description: 开启
+          required: true
+          example: c_value_on
+          schema:
+            type: integer
+        - name: cookei_api_off
+          in: cookie
+          description: 关闭的参数不请求
+          required: true
+          example: c_value_off
+          schema:
+            type: string
+        - name: cookei_api_var
+          in: cookie
+          description: 使用示例值为变量
+          required: true
+          example: c_{{api_var}}
+          schema:
+            type: string
+        - name: cookei_api_dymic
+          in: cookie
+          description: 使用动态参数
+          required: true
+          example: '{% mock ''pick'' , [''cookiepick''] %}'
+          schema:
+            type: string
+        - name: cookie_str
+          in: cookie
+          description: string类型
+          required: true
+          example: test
+          schema:
+            type: string
+        - name: cookie_int
+          in: cookie
+          description: int
+          required: true
+          example: 1234
+          schema:
+            type: integer
+        - name: cookie_num
+          in: cookie
+          description: num
+          required: true
+          example: 11.23
+          schema:
+            type: number
+        - name: cookie_array
+          in: cookie
+          description: 数组
+          required: true
+          example:
+            - peach
+            - apple
+          schema:
+            type: array
+            items:
+              type: string
+        - name: cookie_unrequired
+          in: cookie
+          description: 非必填字段
+          required: false
+          example: unrequired
+          schema:
+            type: string
+        - name: p_string
+          in: path
+          description: desc_p_string
+          required: true
+          example: test
+          schema:
+            type: string
+        - name: p_number
+          in: path
+          description: ''
+          required: true
+          example: 11.23
+          schema:
+            type: number
+        - name: p_int
+          in: path
+          description: >-
+            desc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_longdesc_long
+          required: true
+          example: 1234
+          schema:
+            type: integer
+        - name: query_fixed
+          in: query
+          description: 固定值
+          required: true
+          example: q_fixed
+          schema:
+            type: string
+        - name: query_api_on
+          in: query
+          description: q同名参数：接口1、全局1、额外1，应请求接口值
+          required: true
+          example: q_value_on
+          schema:
+            type: integer
+        - name: query_api_off
+          in: query
+          description: 关闭的参数不请求
+          required: true
+          example: q_value_off
+          schema:
+            type: string
+        - name: query_api_var
+          in: query
+          description: 使用示例值为变量
+          required: true
+          example: q_{{api_var}}
+          schema:
+            type: string
+        - name: query_api_dynamic
+          in: query
+          description: 使用动态参数
+          required: true
+          example: '{% mock ''pick'' , [''querypick''] %}'
+          schema:
+            type: string
+        - name: query_string
+          in: query
+          description: string
+          required: true
+          example: sss
+          schema:
+            type: string
+        - name: query_int
+          in: query
+          description: int类型
+          required: true
+          example: 22
+          schema:
+            type: integer
+        - name: query_num
+          in: query
+          description: 小数点
+          required: true
+          example: 33.33
+          schema:
+            type: number
+        - name: query_array
+          in: query
+          description: 数组
+          required: true
+          example:
+            - apple
+            - peach
+          schema:
+            type: array
+            items:
+              type: string
+        - name: query_unquired
+          in: query
+          description: 非必需字段
+          required: false
+          example: unquired
+          schema:
+            type: string
+        - name: header_api_on
+          in: header
+          description: q同名参数：接口1、全局1、额外1，应请求接口值
+          required: true
+          example: h_value_on
+          schema:
+            type: integer
+        - name: header_api_off
+          in: header
+          description: 关闭的参数不请求
+          required: true
+          example: h_value_off
+          schema:
+            type: string
+        - name: header_api_var
+          in: header
+          description: 使用示例值为变量
+          required: true
+          example: h_{{api_var}}
+          schema:
+            type: string
+        - name: header_api_dymic
+          in: header
+          description: 使用动态参数
+          required: true
+          example: '{% mock ''pick'' , [''headerpick''] %}'
+          schema:
+            type: string
+        - name: header_str
+          in: header
+          description: string类型
+          required: true
+          example: hello
+          schema:
+            type: string
+        - name: header_int
+          in: header
+          description: int
+          required: true
+          example: 1234
+          schema:
+            type: integer
+        - name: header_number
+          in: header
+          description: number类型
+          required: true
+          example: 33.33
+          schema:
+            type: number
+        - name: header_array
+          in: header
+          description: 数组类型
+          required: true
+          example:
+            - aaaa
+            - bbbb
+          schema:
+            type: array
+            items:
+              type: string
+        - name: header_unrequired
+          in: header
+          description: 非必填字段
+          required: false
+          example: unrequired
+          schema:
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                body_api_on:
+                  description: q同名参数：接口1、全局1、额外1，应请求接口值
+                  example: b_value_on
+                  type: integer
+                body_api_off:
+                  description: 关闭的参数不请求
+                  example: b_value_off
+                  type: string
+                body_api_var:
+                  description: 使用示例值为变量
+                  example: b_{{api_var}}
+                  type: string
+                body_api_dymic:
+                  description: 使用动态参数
+                  example: '{% mock ''pick'' , [''bodypick''] %}'
+                  type: string
+                body_string:
+                  description: str
+                  example: hello
+                  type: string
+                body_int:
+                  description: int
+                  example: 1234
+                  type: integer
+                body_number:
+                  description: number
+                  example: 33.33
+                  type: number
+                body_file:
+                  description: file
+                  example: >-
+                    cmMtdXBsb2FkLTE2NjA5MTMxNjc5NjYtMg==/优惠券.postman_collection.json
+                  type: string
+                  format: binary
+                body_array:
+                  description: array
+                  example:
+                    - aaaa
+                    - bbbb
+                  type: array
+                body_unrequired:
+                  description: 非必填字段
+                  example: unrequired
+                  type: string
+              required:
+                - body_api_on
+                - body_api_off
+                - body_api_var
+                - body_api_dymic
+                - body_string
+                - body_int
+                - body_number
+                - body_file
+                - body_array
+            example:
+              name: 队党省见格
+              id: 33
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ALLtypeEnglish'
+          headers: {}
+        '304':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    title: ''
+                    description: 序号
+                required:
+                  - id
+          headers: {}
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  'off':
+                    type: boolean
+                  errorCode:
+                    type: string
+                  errorMessage:
+                    type: string
+                required:
+                  - 'off'
+                  - errorCode
+                  - errorMessage
+          headers: {}
+        '502':
+          description: ''
+          content:
+            application/json:
+              schema:
+                description: >-
+                  [1_开发中_3492316](api-3492316)<br>
+
+                  [1_开发中_3526118](api-3526118)[1_不存在](api-3525765)[文档跳转_338429](doc-338429)[文档不存在](doc-338480)
+                $ref: >-
+                  #/components/schemas/%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%AD%E6%96%87ALLtypeChinese
+              example:
+                name: 素己几
+                f_array:
+                  - et occaecat aliqua ut
+                id: 13
+                category:
+                  id: 9
+                  name: 立接
+                f_obj:
+                  name: 情般立细权
+                  id: '34'
+                f_string: available
+                f_int: 88
+                f_bool: true
+                f_number: 54
+                f_null: null
+                f_any: []
+                f_allof:
+                  name: 响马候上龙
+                  id2: '69'
+                  id: '18'
+                f_oneof:
+                  name: 广个七数办
+                  id: '68'
+                f_anyof:
+                  name: 完为须个算油收
+                  id: '87'
+                f_required_nullable: '1970-01-10'
+          headers: {}
+        x-200:3-引用后解除关联:
+          description: ''
+          content:
+            application/json:
+              schema:
+                description: |-
+                  [1_开发中_3492316](api-3492316)<br/>
+                  [1_开发中_3526118](api-3526118)<br/>
+                  [1_不存在](api-3525765)
+                  [文档跳转_338429](doc-338429)
+                  [文档不存在](doc-338480)
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: 定义了"format":"int64"
+                    title: datatype-中文名
+                    format: int64
+                  category:
+                    $ref: '#/components/schemas/Category'
+                    description: 引用了模型分类
+                  name:
+                    type: string
+                    description: 定义了mock
+                    title: 名字
+                    example: doggie
+                  f_array:
+                    type: array
+                    xml:
+                      name: photoUrl
+                      wrapped: true
+                    items:
+                      type: string
+                  f_obj:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      id:
+                        type: string
+                    required:
+                      - name
+                      - id
+                  f_string:
+                    type: string
+                    enum:
+                      - available
+                      - pending
+                      - sold
+                  f_int:
+                    type: integer
+                  f_bool:
+                    type: boolean
+                  f_number:
+                    type: number
+                  f_null:
+                    type: 'null'
+                  f_any:
+                    nullable: true
+                    oneOf:
+                      - type: string
+                      - type: integer
+                      - type: boolean
+                      - type: array
+                      - type: object
+                      - type: number
+                  f_allof:
+                    allOf:
+                      - type: object
+                        properties:
+                          name:
+                            type: string
+                          id:
+                            type: string
+                        required:
+                          - name
+                      - type: object
+                        properties:
+                          name:
+                            type: string
+                          id2:
+                            type: string
+                        required:
+                          - name
+                  f_oneof:
+                    oneOf:
+                      - type: object
+                        properties:
+                          name:
+                            type: string
+                          id:
+                            type: string
+                        required:
+                          - name
+                      - type: object
+                        properties:
+                          name:
+                            type: string
+                          id2:
+                            type: string
+                        required:
+                          - name
+                  f_anyof:
+                    anyOf:
+                      - type: object
+                        properties:
+                          name:
+                            type: string
+                          id:
+                            type: string
+                        required:
+                          - name
+                      - type: object
+                        properties:
+                          name:
+                            type: string
+                          id2:
+                            type: string
+                        required:
+                          - name
+                  f_required_nullable:
+                    type: string
+                    description: 必填&允许空&datetime&有枚举值
+                    format: Date-Time
+                    title: 字段别名
+                    enum:
+                      - '1970-01-10'
+                      - '2022-01-10'
+                    nullable: true
+                required:
+                  - name
+                  - f_array
+                  - id
+                  - category
+                  - f_obj
+                  - f_string
+                  - f_int
+                  - f_bool
+                  - f_number
+                  - f_null
+                  - f_any
+                  - f_allof
+                  - f_oneof
+                  - f_anyof
+                  - f_required_nullable
+          headers: {}
+        x-200:4-半引用:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  f_string:
+                    type: integer
+                    description: 解除绑定并修改的字段
+                  f_int:
+                    type: integer
+                  f_bool:
+                    type: boolean
+                  f_required_nullable:
+                    type: string
+                    description: 必填&允许空&datetime&有枚举值
+                    format: Date-Time
+                    title: ''
+                    enum:
+                      - '1970-01-10'
+                      - '2022-01-10'
+                    nullable: true
+                  f_unrequired_notnull:
+                    type: string
+                    description: 非必填&不允许空&datetime&有枚举值
+                  multi:
+                    type: object
+                    properties:
+                      f_array_array:
+                        type: array
+                        items:
+                          type: array
+                          items:
+                            type: string
+                      f_array_obj:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            id:
+                              type: string
+                          required:
+                            - name
+                            - id
+                    required:
+                      - f_array_array
+                      - f_array_obj
+                    description: 多层嵌套
+                  f_bigint:
+                    type: integer
+                  AdvanceSetting:
+                    type: object
+                    properties:
+                      int:
+                        type: object
+                        properties:
+                          f_int_customValue:
+                            type: integer
+                            description: int设置常量1001
+                            const: 1001
+                          f_int_customValue0:
+                            type: integer
+                            description: int设置常量0
+                            const: 0
+                        required:
+                          - f_int_customValue
+                    required:
+                      - int
+                  additional:
+                    type: string
+                    description: 新加的字段
+                required:
+                  - additional
+                  - f_string
+                  - f_int
+                  - f_bool
+                  - f_required_nullable
+                  - multi
+                  - f_bigint
+          headers: {}
+        x-200:markdown:
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                type: object
+                properties:
+                  '333':
+                    type: string
+                  test1:
+                    type: string
+                  abc2:
+                    type: string
+                    description: |-
+                      #### Rule Category
+                      FAA rules are categorized into the following:
+                      | Category | Description |
+                      | --------- | ----------- |
+                      | faa_107 | FAA Commercial UAS Flight. |
+                      | faa_44809 | FAA Recreational UAS Flight. |
+                required:
+                  - test1
+                  - abc2
+                  - '333'
+          headers: {}
+        x-200:组件1-所有字段类型:
+          description: ''
+          content:
+            application/json:
+              schema:
+                required:
+                  - f_array
+                  - f_obj
+                  - f_string
+                  - f_int
+                  - f_bool
+                  - f_number
+                  - f_null
+                  - f_any
+                  - f_allof
+                  - f_oneof
+                  - f_anyof
+                  - f_required_nullable
+                  - multi
+                  - f_bigint
+                  - f_datatype_halfRef
+                  - f_datatype_allRef
+                type: object
+                properties:
+                  f_array:
+                    type: array
+                    xml:
+                      name: photoUrl
+                      wrapped: true
+                    items:
+                      type: string
+                      enum:
+                        - tttt
+                        - kkk
+                      description: 设置了枚举值
+                  f_obj:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      id:
+                        type: string
+                      f_obj_array:
+                        type: array
+                        items:
+                          type: string
+                      f_obj_obj:
+                        type: object
+                        properties:
+                          xx_id:
+                            type: string
+                          xx_name:
+                            type: string
+                        required:
+                          - xx_id
+                          - xx_name
+                        description: obj多层嵌套
+                    required:
+                      - name
+                      - id
+                      - f_obj_array
+                      - f_obj_obj
+                    description: 允许null
+                    nullable: true
+                  f_string:
+                    type: string
+                    enum:
+                      - available
+                      - pending
+                      - sold
+                    description: 设置了枚举值
+                  f_int:
+                    type: integer
+                  f_bool:
+                    type: boolean
+                  f_number:
+                    type: number
+                  f_null:
+                    type: 'null'
+                  f_any:
+                    nullable: true
+                    oneOf:
+                      - type: string
+                      - type: integer
+                      - type: boolean
+                      - type: array
+                      - type: object
+                      - type: number
+                  f_allof:
+                    allOf:
+                      - type: object
+                        properties:
+                          name:
+                            type: string
+                          id:
+                            type: string
+                        required:
+                          - name
+                      - type: object
+                        properties:
+                          name:
+                            type: string
+                          id2:
+                            type: string
+                        required:
+                          - name
+                  f_oneof:
+                    oneOf:
+                      - type: object
+                        properties:
+                          name0:
+                            type: string
+                          id0:
+                            type: string
+                        required:
+                          - name0
+                      - type: object
+                        properties:
+                          name1:
+                            type: string
+                          id1:
+                            type: string
+                        required:
+                          - name1
+                  f_anyof:
+                    anyOf:
+                      - type: object
+                        properties:
+                          name:
+                            type: string
+                          id:
+                            type: string
+                        required:
+                          - name
+                      - type: object
+                        properties:
+                          name:
+                            type: string
+                          id2:
+                            type: string
+                        required:
+                          - name
+                  f_required_nullable:
+                    type: string
+                    description: 必填&允许空&datetime&有枚举值
+                    format: Date-Time
+                    title: ''
+                    enum:
+                      - '1970-01-10'
+                      - '2022-01-10'
+                    nullable: true
+                  multi:
+                    type: object
+                    properties:
+                      f_array_array:
+                        type: array
+                        items:
+                          type: array
+                          items:
+                            type: string
+                      f_array_obj:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            id:
+                              type: string
+                          required:
+                            - name
+                            - id
+                    required:
+                      - f_array_array
+                      - f_array_obj
+                    description: 多层嵌套
+                  f_bigint:
+                    type: integer
+                  f_datatype_halfRef:
+                    type: object
+                    properties: {}
+                    description: 模型引用_半引用
+                  f_datatype_allRef:
+                    description: 模型全引用
+                    $ref: '#/components/schemas/TypeNotAllowNull'
+                  f_unrequired_notnull:
+                    type: string
+                    description: 非必填&不允许空&datetime&有枚举值
+                  f_obj_unnecessary:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                    required:
+                      - id
+                      - name
+                title: ALLtypeEnglish勿改
+              examples:
+                '2':
+                  summary: 组件1-示例1
+                  value:
+                    f_array:
+                      - kkk
+                      - kkk
+                      - kkk
+                    f_obj: null
+                    f_string: available
+                    f_int: 10
+                    f_bool: true
+                    f_number: 2
+                    f_null: null
+                    f_any: []
+                    f_allof:
+                      name: 平国包权
+                      id2: '34'
+                      id: '94'
+                    f_oneof:
+                      name1: 响低真北状提
+                      id1: '73'
+                    f_anyof:
+                      name: 用角会资题非厂
+                      id2: '100'
+                    f_required_nullable: '2022-01-10'
+                    multi:
+                      f_array_array:
+                        - - cupidatat sint in laboris ea
+                        - - proident nisi mollit aliquip do
+                          - commodo est
+                          - dolor
+                          - ullamco
+                        - - sint ex officia ut proident
+                          - reprehenderit sint
+                          - voluptate
+                          - ut magna aliquip
+                          - sit do voluptate id
+                        - - minim ut
+                          - irure exercitation eiusmod esse quis
+                      f_array_obj:
+                        - name: 会称即自
+                          id: '39'
+                    f_bigint: 1503289371362545700
+                    f_datatype_halfRef:
+                      SmartMock:
+                        match_phone: '13291527501'
+                        dismatch_phone: true
+                    f_datatype_allRef:
+                      name: 再内中
+                      id: 50
+                    f_obj_unnecessary:
+                      id: '77'
+                      name: 者确界
+                    f_unrequired_notnull: qui cillum nostrud Excepteur tempor
+                '3':
+                  summary: 组件1-示例2
+                  value:
+                    f_array:
+                      - tttt
+                      - kkk
+                      - kkk
+                      - tttt
+                    f_obj: null
+                    f_string: sold
+                    f_int: 70
+                    f_bool: false
+                    f_number: 41
+                    f_null: null
+                    f_any: {}
+                    f_allof:
+                      name: 存信本
+                      id: '68'
+                      id2: '85'
+                    f_oneof:
+                      name0: 种要少用应需
+                      id0: '44'
+                    f_anyof:
+                      name: 而意系论真
+                      id2: '91'
+                    f_required_nullable: '2022-01-10'
+                    multi:
+                      f_array_array:
+                        - - nostrud cillum sit
+                        - - in laboris nulla
+                          - labore aliqua
+                          - eu aute
+                          - sunt aute elit irure do
+                          - ad dolore eiusmod sint id
+                        - - nulla mollit aute dolor
+                        - - officia laboris fugiat
+                          - exercitation
+                          - exercitation velit consequat
+                          - sit
+                        - - aliquip Duis dolor et dolore
+                          - anim sed
+                      f_array_obj:
+                        - name: 后器将将它会些
+                          id: '20'
+                    f_bigint: 1503289371362545700
+                    f_datatype_halfRef:
+                      SmartMock:
+                        match_phone: '18645437726'
+                        dismatch_phone: false
+                    f_datatype_allRef:
+                      name: 们干派
+                      id: 65
+                    f_unrequired_notnull: minim est elit cupidatat Lorem
+                    f_obj_unnecessary:
+                      id: '25'
+                      name: 象流将
+          headers: {}
+        x-200:组件2-全局默认on&有示例:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                required:
+                  - result
+              example:
+                result: 全局响应组件，新接口默认on
+          headers: {}
+      security:
+        - bearer: []
+  /regression/api_status/testing:
+    post:
+      summary: 2_测试中
+      deprecated: false
+      description: ''
+      tags:
+        - UIDisplayTest
+        - include
+      parameters:
+        - name: Authorization
+          in: header
+          description: ''
+          required: true
+          example: bearer084462c7-b94b-40cc-b178-344a103635d0
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phoneRepeat:
+                  type: array
+                  items:
+                    type: string
+                pokeUserList:
+                  type: array
+                  items:
+                    type: string
+                example:
+                  type: string
+                  example: ex1
+              required:
+                - phoneRepeat
+                - pokeUserList
+                - example
+            examples:
+              '1':
+                value:
+                  phoneRepeat:
+                    - '18111527784'
+                    - '18167271775'
+                    - '18671922838'
+                  pokeUserList:
+                    - culpa irure
+              '2':
+                value:
+                  phoneRepeat:
+                    - (291) 958-6376 x090
+                    - 508-698-9302 x574
+                  pokeUserList:
+                    - qui
+                  example: ex1
+                summary: Example 2
+              '3':
+                value:
+                  phoneRepeat:
+                    - 792.233.4205 x631
+                    - 613.688.0837
+                    - 513.279.2347 x211
+                  pokeUserList:
+                    - qui dolore dolore reprehenderit
+                  example: ex1
+                summary: Example 3
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  phoneRepeat:
+                    type: array
+                    description: 重复的手机号
+                    items:
+                      type: string
+                    title: 重复手机号
+                  pokeUserList:
+                    type: array
+                    description: 对方也发布当前用户的手机号的用户列表
+                    items:
+                      type: object
+                      required:
+                        - status
+                      properties:
+                        balance:
+                          type: number
+                          format: double
+                          description: 用户余额
+                        birthDate:
+                          type: string
+                          description: 用户生日
+                        growth:
+                          type: integer
+                          format: int32
+                          description: 用户当前成长值
+                        level:
+                          type: integer
+                          format: int32
+                          description: 用户等级
+                        levelType:
+                          type: integer
+                          format: int32
+                          description: 等级条件 0 普通会员 1 付费会员
+                        mobile:
+                          type: string
+                          description: 用户手机号隐藏位数
+                        nickName:
+                          type: string
+                          description: 用户昵称
+                        pic:
+                          type: string
+                          description: 头像图片路径
+                        score:
+                          type: integer
+                          format: int32
+                          description: 用户积分
+                        sex:
+                          type: string
+                          description: 用户性别M(男 1) or F(女 0)
+                        status:
+                          type: integer
+                          format: int32
+                          description: 用户状态：0禁用 1正常
+                        userMobile:
+                          type: string
+                          description: 用户手机号
+                      title: UserDto
+                      $$ref: '#/definitions/UserDto'
+                title: PublishPhoneVo
+                $$ref: '#/definitions/PublishPhoneVo'
+          headers: {}
+        '401':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  message:
+                    type: string
+                required:
+                  - code
+                  - message
+          headers: {}
+        x-200:组件2-全局默认on&有示例:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+                required:
+                  - result
+              example:
+                result: 全局响应组件，新接口默认on
+          headers: {}
+      security: []
+components:
+  schemas:
+    MockTestType:
+      type: object
+      properties:
+        SmartMock:
+          type: object
+          properties:
+            match_ip:
+              type: string
+              description: 命中智能 mock 规则 ip
+              title: ''
+            dismatch_ip:
+              type: boolean
+              description: 类型不符合，不命中智能ip，应返回布尔类型
+          title: 智能mock
+          description: 入口-项目设置项目设置
+        SelfDefinedSmartMock:
+          type: object
+          properties:
+            match_phone_self_defined:
+              type: string
+              description: 该字段符合自定义mock规则
+            dismatch_phone_self_defined:
+              type: boolean
+              description: 该字段类型不符合，则不返回自定义智能mock
+            match_phone_self_defined_null:
+              type: string
+              description: 允许null
+              nullable: true
+            match_phone_self_defined_unnecessary:
+              type: string
+              description: 非必需
+          title: 自定义智能mock
+          required:
+            - match_phone_self_defined
+            - dismatch_phone_self_defined
+            - match_phone_self_defined_null
+          description: 入口-项目设置.同时匹配自定义mock和智能mock时，优先自定义mock
+        ApiDefined:
+          type: object
+          properties:
+            advance_setting_enum:
+              type: string
+              description: 字段高级设置，设置了枚举
+              enum:
+                - api_defined_high
+              title: 字段高级设置
+            field_mock:
+              type: string
+              title: 字段mock
+            advance_setting_enum&field_mock:
+              type: string
+              title: 高级设置和mock同时
+              enum:
+                - api_defined_high
+              description: 字段mock>字段高级设置
+          title: 字段定义
+          description: 字段编辑器做了定义
+      required:
+        - SmartMock
+        - SelfDefinedSmartMock
+        - ApiDefined
+    TypeNotAllowNull:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        id:
+          type: integer
+      required:
+        - name
+        - id
+    ALLtypeEnglish:
+      type: object
+      properties:
+        f_datatype_halfRef:
+          type: object
+          properties:
+            SmartMock:
+              type: object
+              properties:
+                match_ip:
+                  type: string
+                  description: 命中智能 mock 规则 ip
+                  title: ''
+                dismatch_ip:
+                  type: boolean
+                  description: 类型不符合，不命中智能ip，应返回布尔类型
+              title: 智能mock
+              description: 入口-项目设置项目设置
+          description: 模型引用_半引用
+          additionalProperties: true
+          required:
+            - SmartMock
+        f_datatype_allRef:
+          description: 模型全引用
+          $ref: '#/components/schemas/TypeNotAllowNull'
+        f_string:
+          type: string
+          enum:
+            - available
+            - pending
+            - sold
+          description: 设置了枚举值
+        f_int:
+          type: integer
+        f_bool:
+          type: boolean
+        f_array:
+          type: array
+          xml:
+            name: photoUrl
+            wrapped: true
+          items:
+            type: string
+            enum:
+              - tttt
+              - kkk
+            description: 设置了枚举值
+        f_obj:
+          type: object
+          properties:
+            name:
+              type: string
+            id:
+              type: string
+            f_obj_array:
+              type: array
+              items:
+                type: string
+            f_obj_obj:
+              type: object
+              properties:
+                xx_id:
+                  type: string
+                xx_name:
+                  type: string
+              required:
+                - xx_id
+                - xx_name
+              description: obj多层嵌套
+          required:
+            - name
+            - id
+            - f_obj_array
+            - f_obj_obj
+          description: 允许null
+          nullable: true
+        f_obj_unnecessary:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+          required:
+            - id
+            - name
+        f_number:
+          type: number
+        f_null:
+          type: 'null'
+        f_any:
+          nullable: true
+          oneOf:
+            - type: string
+            - type: integer
+            - type: boolean
+            - type: array
+            - type: object
+            - type: number
+        f_allof:
+          allOf:
+            - type: object
+              properties:
+                name:
+                  type: string
+                  description: desc of allof 1_name
+                id:
+                  type: string
+              required:
+                - name
+              additionalProperties: true
+              description: desc of allof 1
+            - type: object
+              properties:
+                name:
+                  type: string
+                id2:
+                  type: string
+              required:
+                - name
+              additionalProperties: true
+              description: desc of allof 2
+          description: desc of f_allof
+        f_oneof:
+          oneOf:
+            - type: object
+              properties:
+                name0:
+                  type: string
+                id0:
+                  type: string
+              required:
+                - name0
+            - type: object
+              properties:
+                name1:
+                  type: string
+                id1:
+                  type: string
+              required:
+                - name1
+        f_anyof:
+          anyOf:
+            - type: object
+              properties:
+                name:
+                  type: string
+                id:
+                  type: string
+              required:
+                - name
+            - type: object
+              properties:
+                name:
+                  type: string
+                id2:
+                  type: string
+              required:
+                - name
+        f_required_nullable:
+          type: string
+          description: 必填&允许空&datetime&有枚举值
+          format: Date-Time
+          title: ''
+          enum:
+            - '1970-01-10'
+            - '2022-01-10'
+          nullable: true
+        f_unrequired_notnull:
+          type: string
+          description: 非必填&不允许空&datetime&有枚举值
+        multi:
+          type: object
+          properties:
+            f_array_array:
+              type: array
+              items:
+                type: array
+                items:
+                  type: string
+            f_array_obj:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  id:
+                    type: string
+                required:
+                  - name
+                  - id
+          required:
+            - f_array_array
+            - f_array_obj
+          description: 多层嵌套
+        f_bigint:
+          type: integer
+        AdvanceSetting:
+          type: object
+          properties:
+            int:
+              type: object
+              properties:
+                f_int_customValue:
+                  type: integer
+                  description: int设置常量1001
+                  const: 1001
+                f_int_customValue0:
+                  type: integer
+                  description: int设置常量0
+                  const: 0
+              required:
+                - f_int_customValue
+          required:
+            - int
+      title: ALLtypeEnglish勿改
+      required:
+        - f_array
+        - f_obj
+        - f_string
+        - f_int
+        - f_bool
+        - f_number
+        - f_null
+        - f_any
+        - f_allof
+        - f_oneof
+        - f_anyof
+        - f_required_nullable
+        - multi
+        - f_bigint
+        - f_datatype_halfRef
+        - f_datatype_allRef
+      additionalProperties: true
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          minimum: 1
+          description: 分类ID编号数据模型不超过1w
+          maximum: 10
+        name:
+          type: string
+          description: 分类名称
+      xml:
+        name: Category
+    根目录中文ALLtypeChinese:
+      required:
+        - name
+        - f_array
+        - id
+        - category
+        - f_obj
+        - f_string
+        - f_int
+        - f_bool
+        - f_number
+        - f_null
+        - f_any
+        - f_allof
+        - f_oneof
+        - f_anyof
+        - f_required_nullable
+        - file_sha256
+      type: object
+      properties:
+        id:
+          type: integer
+          description: 定义了"format":"int64"
+          title: datatype-中文名
+          format: int64
+        category:
+          $ref: '#/components/schemas/Category'
+          description: 引用了模型分类
+        name:
+          type: string
+          description: 定义了mock
+          title: 名字
+          example: doggie
+        f_array:
+          type: array
+          xml:
+            name: photoUrl
+            wrapped: true
+          items:
+            type: string
+        f_obj:
+          type: object
+          properties:
+            name:
+              type: string
+            id:
+              type: string
+          required:
+            - name
+            - id
+        f_string:
+          type: string
+          enum:
+            - available
+            - pending
+            - sold
+        f_int:
+          type: integer
+        f_bool:
+          type: boolean
+        f_number:
+          type: number
+        f_null:
+          type: 'null'
+        f_any:
+          nullable: true
+          oneOf:
+            - type: string
+            - type: integer
+            - type: boolean
+            - type: array
+            - type: object
+            - type: number
+        f_allof:
+          allOf:
+            - type: object
+              properties:
+                name:
+                  type: string
+                id:
+                  type: string
+              required:
+                - name
+            - type: object
+              properties:
+                name:
+                  type: string
+                id2:
+                  type: string
+              required:
+                - name
+        f_oneof:
+          oneOf:
+            - type: object
+              properties:
+                name:
+                  type: string
+                id:
+                  type: string
+              required:
+                - name
+            - type: object
+              properties:
+                name:
+                  type: string
+                id2:
+                  type: string
+              required:
+                - name
+        f_anyof:
+          anyOf:
+            - type: object
+              properties:
+                name:
+                  type: string
+                id:
+                  type: string
+              required:
+                - name
+            - type: object
+              properties:
+                name:
+                  type: string
+                id2:
+                  type: string
+              required:
+                - name
+        f_required_nullable:
+          type: string
+          description: 必填&允许空&datetime&有枚举值
+          format: Date-Time
+          title: 字段别名
+          enum:
+            - '1970-01-10'
+            - '2022-01-10'
+          nullable: true
+        file_sha256:
+          type: string
+          minLength: 64
+          maxLength: 64
+          pattern: '[a-fA-F0-9]{64}'
+      description: |-
+        [1_开发中_3492316](api-3492316)
+        [1_开发中_3492316 Copy](api-3525765)
+        [文档跳转_338429](doc-338429)
+        [##错误码说明_338185 Copy](doc-338480)
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+servers: []
+security: []
