@@ -1,0 +1,1492 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "寵物商店000",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "pet"
+    },
+    {
+      "name": "store"
+    },
+    {
+      "name": "user"
+    }
+  ],
+  "paths": {
+    "/pet/{petId}": {
+      "get": {
+        "summary": "依 ID 尋找寵物",
+        "deprecated": false,
+        "description": "傳回單一寵物",
+        "operationId": "getPetById",
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "description": "要傳回的寵物 ID",
+            "required": true,
+            "example": 0,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pet"
+                },
+                "example": {
+                  "id": 100,
+                  "category": {
+                    "id": 101,
+                    "name": "dog"
+                  },
+                  "name": "Luna",
+                  "photoUrls": [
+                    "https://loremflickr.com/400/400?lock=2557291284045546",
+                    "https://loremflickr.com/400/400?lock=1603075073377479"
+                  ],
+                  "tags": [
+                    {
+                      "id": 15,
+                      "name": "Dalmatian"
+                    }
+                  ],
+                  "status": "available"
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "Pet not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "使用 form-data 更新寵物",
+        "deprecated": false,
+        "description": "",
+        "operationId": "updatePetWithForm",
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "description": "要更新的寵物 ID",
+            "required": true,
+            "example": 0,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "description": "寵物的更新名稱",
+                    "type": "string",
+                    "example": ""
+                  },
+                  "status": {
+                    "description": "寵物的更新狀態",
+                    "type": "string",
+                    "example": ""
+                  }
+                }
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "405": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "刪除寵物",
+        "deprecated": false,
+        "description": "",
+        "operationId": "deletePet",
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "description": "要刪除的寵物 ID",
+            "required": true,
+            "example": 0,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "api_key",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "Pet not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/pet/findByStatus": {
+      "get": {
+        "summary": "依狀態尋找寵物",
+        "deprecated": false,
+        "description": "可以提供多個以逗號分隔的字串狀態值",
+        "operationId": "findPetsByStatus",
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "description": "需要考量用於篩選的狀態值",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "available",
+                  "pending",
+                  "sold"
+                ],
+                "default": "available"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pet"
+                  }
+                },
+                "example": [
+                  {
+                    "id": 72988218,
+                    "category": {
+                      "id": 49264852,
+                      "name": "Holly Smitham"
+                    },
+                    "name": "doggie",
+                    "photoUrls": [
+                      "https://loremflickr.com/400/400?lock=8089233623717920",
+                      "https://loremflickr.com/400/400?lock=5410339392613092",
+                      "https://loremflickr.com/400/400?lock=7220008450180245"
+                    ],
+                    "tags": [
+                      {
+                        "id": -97298132,
+                        "name": "Minnie Morissette"
+                      },
+                      {
+                        "id": -12693806,
+                        "name": "Ross Ryan"
+                      }
+                    ],
+                    "status": "pending"
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Invalid status value",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/pet/findByTags": {
+      "get": {
+        "summary": "依標籤尋找寵物",
+        "deprecated": true,
+        "description": "可以提供多個以逗號分隔的字串標籤。使用 tag1, tag2, tag3 進行測試。",
+        "operationId": "findPetsByTags",
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "要篩選的標籤",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pet"
+                  }
+                },
+                "example": [
+                  {
+                    "id": 9638600,
+                    "category": {
+                      "id": -71616005,
+                      "name": "Wm Veum"
+                    },
+                    "name": "doggie",
+                    "photoUrls": [
+                      "https://loremflickr.com/400/400?lock=6246723472646079",
+                      "https://loremflickr.com/400/400?lock=6335459515409878",
+                      "https://loremflickr.com/400/400?lock=6471337726788148"
+                    ],
+                    "tags": [
+                      {
+                        "id": -48080512,
+                        "name": "Misty Muller"
+                      }
+                    ],
+                    "status": "sold"
+                  },
+                  {
+                    "id": 76221140,
+                    "category": {
+                      "id": 83516395,
+                      "name": "Guadalupe Lindgren"
+                    },
+                    "name": "doggie",
+                    "photoUrls": [
+                      "https://loremflickr.com/400/400?lock=5248707108342490",
+                      "https://loremflickr.com/400/400?lock=32052187736587"
+                    ],
+                    "tags": [
+                      {
+                        "id": 62605359,
+                        "name": "Clinton Schneider"
+                      },
+                      {
+                        "id": -93861836,
+                        "name": "Luis O'Conner Sr."
+                      },
+                      {
+                        "id": 35862133,
+                        "name": "Garry Ziemann"
+                      }
+                    ],
+                    "status": "available"
+                  },
+                  {
+                    "id": -37413887,
+                    "category": {
+                      "id": -91701265,
+                      "name": "Sophia Ankunding"
+                    },
+                    "name": "doggie",
+                    "photoUrls": [
+                      "https://loremflickr.com/400/400?lock=1423305805589257"
+                    ],
+                    "tags": [
+                      {
+                        "id": -63678106,
+                        "name": "Angelina Beer"
+                      }
+                    ],
+                    "status": "pending"
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Invalid tag value",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/pet/{petId}/uploadImage": {
+      "post": {
+        "summary": "上傳圖片",
+        "deprecated": false,
+        "description": "",
+        "operationId": "uploadFile",
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "description": "要更新的寵物 ID",
+            "required": true,
+            "example": 0,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "additionalMetadata": {
+                    "description": "要傳遞到伺服器的其他資料",
+                    "type": "string",
+                    "example": ""
+                  },
+                  "file": {
+                    "description": "要上傳的檔案",
+                    "type": "string",
+                    "format": "binary",
+                    "example": ""
+                  }
+                }
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                "example": {
+                  "code": 3,
+                  "type": "ex dolor",
+                  "message": "Pecus carcer cometes credo. Vergo infit capitulus tollo. Custodia damno coaegresco defero pecus abeo acies voluntarius baiulus."
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/pet": {
+      "post": {
+        "summary": "新增寵物到商店",
+        "deprecated": false,
+        "description": "",
+        "operationId": "addPet",
+        "tags": [
+          "pet"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "description": "ID"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                "example": {
+                  "id": "100"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "summary": "更新現有寵物",
+        "deprecated": false,
+        "description": "",
+        "operationId": "updatePet",
+        "tags": [
+          "pet"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int64",
+                      "description": "寵物 ID"
+                    },
+                    "category": {
+                      "$ref": "#/components/schemas/Category"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "名稱",
+                      "example": "doggie"
+                    },
+                    "photoUrls": {
+                      "type": "array",
+                      "xml": {
+                        "wrapped": true
+                      },
+                      "items": {
+                        "type": "string",
+                        "xml": {
+                          "name": "photoUrl"
+                        }
+                      },
+                      "description": "圖片 URL"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "xml": {
+                        "wrapped": true
+                      },
+                      "items": {
+                        "$ref": "#/components/schemas/Tag"
+                      },
+                      "description": "標籤"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "寵物銷售狀態",
+                      "enum": [
+                        "available",
+                        "pending",
+                        "sold"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "photoUrls"
+                  ]
+                },
+                "example": {
+                  "id": 57619952,
+                  "category": {
+                    "id": 97056790,
+                    "name": "Mona Kshlerin"
+                  },
+                  "name": "doggie",
+                  "photoUrls": [
+                    "https://loremflickr.com/400/400?lock=190427740691304",
+                    "https://loremflickr.com/400/400?lock=5512522463237719",
+                    "https://loremflickr.com/400/400?lock=1184069713463914"
+                  ],
+                  "tags": [
+                    {
+                      "id": 1230446,
+                      "name": "Timmy Schiller"
+                    },
+                    {
+                      "id": 310656,
+                      "name": "Ricardo Emard PhD"
+                    }
+                  ],
+                  "status": "pending"
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "Pet not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "405": {
+            "description": "Validation exception",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/inventory": {
+      "get": {
+        "summary": "依狀態傳回寵物庫存",
+        "deprecated": false,
+        "description": "傳回狀態代碼到數量的對應",
+        "operationId": "getInventory",
+        "tags": [
+          "store"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/order": {
+      "post": {
+        "summary": "為寵物下訂單",
+        "deprecated": false,
+        "description": "",
+        "operationId": "placeOrder",
+        "tags": [
+          "store"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                },
+                "example": {
+                  "id": 44524671,
+                  "petId": 90180021,
+                  "quantity": 23,
+                  "shipDate": "2025-08-15",
+                  "status": "placed",
+                  "complete": false
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Invalid Order",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/store/order/{orderId}": {
+      "get": {
+        "summary": "依 ID 尋找採購訂單",
+        "deprecated": false,
+        "description": "對於有效的回應，請嘗試值 >= 1 且 <= 10 的整數 ID。其他值將產生例外",
+        "operationId": "getOrderById",
+        "tags": [
+          "store"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "需要取得的寵物 ID",
+            "required": true,
+            "example": 0,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "minimum": 1,
+              "maximum": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                },
+                "example": {
+                  "id": 40238436,
+                  "petId": 69923630,
+                  "quantity": 87,
+                  "shipDate": "2024-12-09",
+                  "status": "approved",
+                  "complete": false
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "Order not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "依 ID 刪除採購訂單",
+        "deprecated": false,
+        "description": "對於有效的回應，請嘗試正整數值的整數 ID。負數或非整數值將產生 API 錯誤",
+        "operationId": "deleteOrder",
+        "tags": [
+          "store"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "需要刪除的訂單 ID",
+            "required": true,
+            "example": 0,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "Order not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/user/createWithList": {
+      "post": {
+        "summary": "使用給定的輸入陣列建立使用者清單",
+        "deprecated": false,
+        "description": "",
+        "operationId": "createUsersWithListInput",
+        "tags": [
+          "user"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/user/{username}": {
+      "get": {
+        "summary": "依使用者名稱取得使用者",
+        "deprecated": false,
+        "description": "",
+        "operationId": "getUserByName",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "需要取得的名稱。使用 user1 進行測試。",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "example": {
+                  "id": 66633156,
+                  "username": "Austin Balistreri III",
+                  "firstName": "Ibrahim",
+                  "lastName": "Boyle",
+                  "email": "Adela_Hane@gmail.com",
+                  "password": "H9U3mhB7hxSkbzj",
+                  "phone": "(729) 767-9354",
+                  "userStatus": 1
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Invalid username supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "summary": "更新使用者",
+        "deprecated": false,
+        "description": "這只能由已登入的使用者完成。",
+        "operationId": "updateUser",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "name that need to be updated",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Invalid user supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "刪除使用者",
+        "deprecated": false,
+        "description": "這只能由已登入的使用者完成。",
+        "operationId": "deleteUser",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "需要刪除的名稱",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid username supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/user/login": {
+      "get": {
+        "summary": "將使用者登入系統",
+        "deprecated": false,
+        "description": "",
+        "operationId": "loginUser",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "用於登入的使用者名稱",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "以明文登入的密碼",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "headers": {
+              "X-Expires-After": {
+                "description": "date in UTC when token expires",
+                "schema": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "X-Rate-Limit": {
+                "description": "calls per hour allowed by the user",
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid username/password supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/user/logout": {
+      "get": {
+        "summary": "登出目前已登入的使用者工作階段",
+        "deprecated": false,
+        "description": "",
+        "operationId": "logoutUser",
+        "tags": [
+          "user"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/user/createWithArray": {
+      "post": {
+        "summary": "使用給定的輸入陣列建立使用者清單",
+        "deprecated": false,
+        "description": "",
+        "operationId": "createUsersWithArrayInput",
+        "tags": [
+          "user"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/user": {
+      "post": {
+        "summary": "建立使用者",
+        "deprecated": false,
+        "description": "這只能由已登入的使用者完成。",
+        "operationId": "createUser",
+        "tags": [
+          "user"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Pet": {
+        "type": "object",
+        "required": [
+          "name",
+          "photoUrls"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "寵物 ID"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "name": {
+            "type": "string",
+            "description": "名稱",
+            "example": "doggie"
+          },
+          "photoUrls": {
+            "type": "array",
+            "xml": {
+              "wrapped": true
+            },
+            "items": {
+              "type": "string",
+              "xml": {
+                "name": "photoUrl"
+              }
+            },
+            "description": "圖片 URL"
+          },
+          "tags": {
+            "type": "array",
+            "xml": {
+              "wrapped": true
+            },
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            },
+            "description": "標籤"
+          },
+          "status": {
+            "type": "string",
+            "description": "寵物銷售狀態",
+            "enum": [
+              "available",
+              "pending",
+              "sold"
+            ]
+          }
+        },
+        "xml": {
+          "name": "Pet"
+        }
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "類別 ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "類別名稱"
+          }
+        },
+        "xml": {
+          "name": "Category"
+        }
+      },
+      "Tag": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "標籤 ID"
+          },
+          "name": {
+            "type": "string",
+            "description": "標籤名稱"
+          }
+        },
+        "xml": {
+          "name": "Tag"
+        }
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "petId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shipDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "Order Status",
+            "enum": [
+              "placed",
+              "approved",
+              "delivered"
+            ]
+          },
+          "complete": {
+            "type": "boolean"
+          }
+        },
+        "xml": {
+          "name": "Order"
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "username": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "userStatus": {
+            "type": "integer",
+            "format": "int32",
+            "description": "User Status"
+          }
+        },
+        "xml": {
+          "name": "User"
+        }
+      },
+      "UserArray": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/User"
+        }
+      }
+    },
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}
