@@ -125,7 +125,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -135,62 +135,8 @@
             "headers": {}
           },
           "404": {
-            "description": "",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-404:记录不存在": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "message": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "message"
-                  ]
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-400:参数不正确": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "message": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "message"
-                  ]
-                }
-              }
-            },
-            "headers": {}
+            "$ref": "#/components/responses/记录不存在",
+            "description": ""
           }
         },
         "security": []
@@ -251,7 +197,7 @@
           "405": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -311,7 +257,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -323,7 +269,7 @@
           "404": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -335,7 +281,7 @@
           "405": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -374,7 +320,7 @@
           "405": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -539,7 +485,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -846,60 +792,6 @@
               }
             },
             "headers": {}
-          },
-          "x-200:10014 Invalid app secret": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "msg": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "msg"
-                  ]
-                },
-                "example": {
-                  "code": 10014,
-                  "msg": "app secret invalid"
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-200:10003 Invalid app_id": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "msg": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "msg"
-                  ]
-                },
-                "example": {
-                  "code": 10003,
-                  "msg": "invalid param"
-                }
-              }
-            },
-            "headers": {}
           }
         },
         "security": [
@@ -985,43 +877,6 @@
                 "example": {
                   "code": 10014,
                   "msg": "app secret invalid"
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-200:200 Success": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "expire": {
-                      "type": "integer"
-                    },
-                    "msg": {
-                      "type": "string"
-                    },
-                    "tenant_access_token": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "expire",
-                    "msg",
-                    "tenant_access_token"
-                  ]
-                },
-                "example": {
-                  "code": 0,
-                  "expire": 7189,
-                  "msg": "ok",
-                  "tenant_access_token": "t-4447b4b1def429e7d46fa0fb9f8c96e1381920ba"
                 }
               }
             },
@@ -1249,7 +1104,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "text/html": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -1736,7 +1591,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -2073,7 +1928,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -9245,7 +9100,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -9715,7 +9570,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -9888,7 +9743,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -10245,48 +10100,6 @@
                 "example": {
                   "code": 18053,
                   "msg": "msg: param error: to user must be in chat, code: 10001"
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-200:200 Success": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "message_id": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "message_id"
-                      ]
-                    },
-                    "msg": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "data",
-                    "msg"
-                  ]
-                },
-                "example": {
-                  "code": 0,
-                  "data": {
-                    "message_id": "om_1040863bbef1e69e182ec14585b45c05"
-                  },
-                  "msg": "ok"
                 }
               }
             },
@@ -13305,7 +13118,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -15647,7 +15460,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -39447,83 +39260,6 @@
               }
             },
             "headers": {}
-          },
-          "x-200:200 Success": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "reserve": {
-                          "type": "object",
-                          "properties": {
-                            "app_link": {
-                              "type": "string"
-                            },
-                            "end_time": {
-                              "type": "string"
-                            },
-                            "id": {
-                              "type": "string"
-                            },
-                            "live_link": {
-                              "type": "string"
-                            },
-                            "meeting_no": {
-                              "type": "string"
-                            },
-                            "url": {
-                              "type": "string"
-                            }
-                          },
-                          "required": [
-                            "app_link",
-                            "end_time",
-                            "id",
-                            "live_link",
-                            "meeting_no",
-                            "url"
-                          ]
-                        }
-                      },
-                      "required": [
-                        "reserve"
-                      ]
-                    },
-                    "msg": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "data",
-                    "msg"
-                  ]
-                },
-                "example": {
-                  "code": 0,
-                  "data": {
-                    "reserve": {
-                      "app_link": "https://applink.feishu.cn/client/videochat/open?source=openplatform&action=join&idtype=reservationid&id=7039504070520782867&preview={?}&mic={?}&speaker={?}&camera={?}",
-                      "end_time": "1641611578",
-                      "id": "7039504070520782867",
-                      "live_link": "https://meetings.feishu-boe.cn/s/1hhdrxhg338cz?src_type=1#",
-                      "meeting_no": "351034576",
-                      "url": "https://vc.feishu.cn/j/351034576"
-                    }
-                  },
-                  "msg": ""
-                }
-              }
-            },
-            "headers": {}
           }
         },
         "security": [
@@ -44941,58 +44677,6 @@
               }
             },
             "headers": {}
-          },
-          "x-200:200 Success": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "permission_member_id": {
-                          "type": "string"
-                        },
-                        "type": {
-                          "type": "string"
-                        },
-                        "user_id": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "permission_member_id",
-                        "type",
-                        "user_id"
-                      ]
-                    },
-                    "msg": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "data",
-                    "msg"
-                  ]
-                },
-                "example": {
-                  "code": 0,
-                  "data": {
-                    "permission_member_id": "OP3917E3W4M0494",
-                    "type": "USER",
-                    "user_id": "ou_0713c82a86ea08721c6af31173c40d57"
-                  },
-                  "msg": "ok"
-                }
-              }
-            },
-            "headers": {}
           }
         },
         "security": [
@@ -47077,53 +46761,6 @@
               }
             },
             "headers": {}
-          },
-          "x-200:200 Success": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "msg": {
-                      "type": "string"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "instance_code_list": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "required": [
-                        "instance_code_list"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "msg",
-                    "data"
-                  ]
-                },
-                "example": {
-                  "code": 0,
-                  "msg": "",
-                  "data": {
-                    "instance_code_list": [
-                      "57476401-3E87-4B44-B4CD-12AB23D34C55"
-                    ]
-                  }
-                }
-              }
-            },
-            "headers": {}
           }
         },
         "security": [
@@ -47434,48 +47071,6 @@
                   "msg": "unsupported approval for free process",
                   "data": {
                     "instance_code": ""
-                  }
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-200:200 Success": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "msg": {
-                      "type": "string"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "instance_code": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "instance_code"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "msg",
-                    "data"
-                  ]
-                },
-                "example": {
-                  "code": 0,
-                  "msg": "",
-                  "data": {
-                    "instance_code": "70411C24-97F4-4C0C-9E37-4B621486FDF6"
                   }
                 }
               }
@@ -55569,7 +55164,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -57730,142 +57325,6 @@
               }
             },
             "headers": {}
-          },
-          "x-200:200 Success": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "has_more": {
-                          "type": "boolean"
-                        },
-                        "items": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "feature": {
-                                "type": "object",
-                                "properties": {
-                                  "face_uploaded": {
-                                    "type": "boolean"
-                                  }
-                                },
-                                "required": [
-                                  "face_uploaded"
-                                ]
-                              },
-                              "user_id": {
-                                "type": "string"
-                              }
-                            },
-                            "required": [
-                              "feature",
-                              "user_id"
-                            ]
-                          }
-                        },
-                        "page_token": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "has_more",
-                        "items",
-                        "page_token"
-                      ]
-                    },
-                    "msg": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "data",
-                    "msg"
-                  ]
-                },
-                "example": {
-                  "code": 0,
-                  "data": {
-                    "has_more": true,
-                    "items": [
-                      {
-                        "feature": {
-                          "face_uploaded": true
-                        },
-                        "user_id": "bfca531a"
-                      },
-                      {
-                        "feature": {
-                          "face_uploaded": true
-                        },
-                        "user_id": "ga2f5c4f"
-                      },
-                      {
-                        "feature": {
-                          "face_uploaded": true
-                        },
-                        "user_id": "c88e4b4g"
-                      },
-                      {
-                        "feature": {
-                          "face_uploaded": true
-                        },
-                        "user_id": "3d8f4844"
-                      },
-                      {
-                        "feature": {
-                          "face_uploaded": true
-                        },
-                        "user_id": "b714a8fa"
-                      },
-                      {
-                        "feature": {
-                          "face_uploaded": true
-                        },
-                        "user_id": "1bd5cg33"
-                      },
-                      {
-                        "feature": {
-                          "face_uploaded": true
-                        },
-                        "user_id": "15d18aa6"
-                      },
-                      {
-                        "feature": {
-                          "face_uploaded": true
-                        },
-                        "user_id": "g663ec53"
-                      },
-                      {
-                        "feature": {
-                          "face_uploaded": true
-                        },
-                        "user_id": "a7bcb8ga"
-                      },
-                      {
-                        "feature": {
-                          "face_uploaded": true
-                        },
-                        "user_id": "ed8g83eg"
-                      }
-                    ],
-                    "page_token": "DnF1ZXJ5VGhlbkZldGNoBQAAAAALjKEGFnBmcWpYSFVtUXM2OGlJOVZXaDhHZ1EAAAAACrbI4hZEaXJlc3FMY1FvV1JQYllLdlZBQUxRAAAAAA3WSisWOGlMVTFDSzlRUC1NUVlISmRiRTRjUQAAAAAOjKmuFjVuRFRpZWRNUllleEJLckkzRlF1WUEAAAAADoyprxY1bkRUaWVkTVJZZXhCS3JJM0ZRdVlB"
-                  },
-                  "msg": ""
-                }
-              }
-            },
-            "headers": {}
           }
         },
         "security": [
@@ -57937,7 +57396,7 @@
           "500": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -58004,7 +57463,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -58250,118 +57709,6 @@
                 "example": {
                   "code": 0,
                   "data": {},
-                  "msg": ""
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-200:200 Success": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "integer"
-                    },
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "items": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "device_id": {
-                                "type": "string"
-                              },
-                              "device_name": {
-                                "type": "string"
-                              },
-                              "device_sn": {
-                                "type": "string"
-                              }
-                            },
-                            "required": [
-                              "device_id",
-                              "device_name",
-                              "device_sn"
-                            ]
-                          }
-                        }
-                      },
-                      "required": [
-                        "items"
-                      ]
-                    },
-                    "msg": {
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "data",
-                    "msg"
-                  ]
-                },
-                "example": {
-                  "code": 0,
-                  "data": {
-                    "items": [
-                      {
-                        "device_id": "6962720993748664613",
-                        "device_name": "王旭测试OTA",
-                        "device_sn": "wx_001"
-                      },
-                      {
-                        "device_id": "6965331178182164780",
-                        "device_name": "../../../WEB--000140",
-                        "device_sn": "3X811116211841000140"
-                      },
-                      {
-                        "device_id": "6967164269963034924",
-                        "device_name": "../../../WEB--000240",
-                        "device_sn": "3X811116211841000240"
-                      },
-                      {
-                        "device_id": "6968407633835655468",
-                        "device_name": "门禁机联调-000040",
-                        "device_sn": "3X811116211841000040"
-                      },
-                      {
-                        "device_id": "6970988381627285804",
-                        "device_name": "xmx-auto",
-                        "device_sn": "boe_autotest"
-                      },
-                      {
-                        "device_id": "6974694202332660012",
-                        "device_name": "xmx-boe",
-                        "device_sn": "xmx_boe"
-                      },
-                      {
-                        "device_id": "6977620965543231788",
-                        "device_name": "自动化测试",
-                        "device_sn": "test_005"
-                      },
-                      {
-                        "device_id": "6979212369579917612",
-                        "device_name": "xmx-dev",
-                        "device_sn": "3X811116211841000340"
-                      },
-                      {
-                        "device_id": "6991821848989565228",
-                        "device_name": "../../../WEB--000040",
-                        "device_sn": "3X811116211841000040"
-                      },
-                      {
-                        "device_id": "8034853996730018795",
-                        "device_name": "测试1",
-                        "device_sn": "100001"
-                      }
-                    ]
-                  },
                   "msg": ""
                 }
               }
@@ -58693,7 +58040,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -58779,7 +58126,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -58791,7 +58138,7 @@
           "404": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -58824,7 +58171,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -58836,7 +58183,7 @@
           "404": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -58935,7 +58282,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59063,7 +58410,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59075,7 +58422,7 @@
           "404": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59137,7 +58484,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59149,7 +58496,7 @@
           "404": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59182,7 +58529,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59194,7 +58541,7 @@
           "404": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59248,7 +58595,7 @@
           "500": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59314,7 +58661,7 @@
           "500": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59380,7 +58727,7 @@
           "500": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59438,7 +58785,7 @@
           "400": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59462,7 +58809,7 @@
           "500": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -59903,7 +59250,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "text/html": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -60359,7 +59706,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -60426,7 +59773,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "text/html": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -60539,7 +59886,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "text/html": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -60593,28 +59940,6 @@
                 },
                 "example": {
                   "valid": true
-                }
-              }
-            },
-            "headers": {}
-          },
-          "x-200:Invalid Timestamp": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "valid": {
-                      "type": "boolean"
-                    }
-                  },
-                  "required": [
-                    "valid"
-                  ]
-                },
-                "example": {
-                  "valid": false
                 }
               }
             },
@@ -61354,7 +60679,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -61658,7 +60983,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -61692,7 +61017,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -61754,7 +61079,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -61788,7 +61113,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -61853,7 +61178,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -61885,7 +61210,7 @@
           "200": {
             "description": "",
             "content": {
-              "*/*": {
+              "application/octet-stream": {
                 "schema": {
                   "type": "object",
                   "properties": {}
@@ -61986,6 +61311,52 @@
         },
         "xml": {
           "name": "Tag"
+        }
+      }
+    },
+    "responses": {
+      "记录不存在": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "integer"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "message"
+              ]
+            }
+          }
+        }
+      },
+      "参数不正确": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "integer"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "message"
+              ]
+            }
+          }
         }
       }
     },
