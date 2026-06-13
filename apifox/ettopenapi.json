@@ -189,6 +189,10 @@
                   "name",
                   "status"
                 ]
+              },
+              "example": {
+                "name": "<string>",
+                "status": "<string>"
               }
             }
           }
@@ -311,8 +315,7 @@
               "schema": {
                 "type": "object",
                 "properties": {}
-              },
-              "examples": {}
+              }
             }
           }
         },
@@ -9646,6 +9649,10 @@
                   "file_name",
                   "file"
                 ]
+              },
+              "example": {
+                "file_name": "测试视频.mp4",
+                "duration": "3000"
               }
             }
           }
@@ -12848,6 +12855,11 @@
                   "size",
                   "file"
                 ]
+              },
+              "example": {
+                "upload_id": "",
+                "seq": "",
+                "size": ""
               }
             }
           }
@@ -13041,6 +13053,12 @@
                   "size",
                   "file"
                 ]
+              },
+              "example": {
+                "file_name": "test.xlsx",
+                "parent_type": "explorer",
+                "parent_node": "fldcnzCjAoKkvWmL5ytRkvnlE0g",
+                "size": "6749"
               }
             }
           }
@@ -15129,6 +15147,11 @@
                   "size",
                   "file"
                 ]
+              },
+              "example": {
+                "upload_id": "",
+                "seq": "",
+                "size": ""
               }
             }
           }
@@ -15311,6 +15334,12 @@
                   "size",
                   "file"
                 ]
+              },
+              "example": {
+                "file_name": "wahaha.jpeg",
+                "parent_type": "docx_image",
+                "parent_node": "doxbcrqT3GWVlYOWRF4ycIcPUFf",
+                "size": "41231"
               }
             }
           }
@@ -47432,6 +47461,10 @@
                   "type",
                   "content"
                 ]
+              },
+              "example": {
+                "name": "abc.doc",
+                "type": "attachment"
               }
             }
           }
@@ -57808,6 +57841,12 @@
                   "type",
                   "file"
                 ]
+              },
+              "example": {
+                "account": "{{phone}}",
+                "fields": "uid,is_admin,nickname,phone,identity,avatar.s(187|webp|0),shop_authentication_status,access_token,expired_date",
+                "password": "123456",
+                "type": "password"
               }
             }
           }
@@ -57880,6 +57919,10 @@
                   "additionalMetadata",
                   "file"
                 ]
+              },
+              "example": {
+                "additionalMetadata": "<string>",
+                "file": "<binary>"
               }
             }
           }
@@ -60762,6 +60805,10 @@
                   "form-date1",
                   "form-date2"
                 ]
+              },
+              "example": {
+                "form-date1": "f1",
+                "form-date2": "f2"
               }
             }
           }
@@ -61008,6 +61055,10 @@
                   "form-date1",
                   "form-date2"
                 ]
+              },
+              "example": {
+                "form-date1": "<string>",
+                "form-date2": "<string>"
               }
             }
           }
