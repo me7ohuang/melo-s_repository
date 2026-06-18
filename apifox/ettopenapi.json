@@ -315,7 +315,8 @@
               "schema": {
                 "type": "object",
                 "properties": {}
-              }
+              },
+              "examples": {}
             }
           }
         },
