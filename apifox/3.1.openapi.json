@@ -1,0 +1,985 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "商店 API",
+    "description": "管理宠物、订单、购买、用户等宠物店业务操作。",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "pet"
+    }
+  ],
+  "paths": {
+    "/pets/{id}": {
+      "post": {
+        "summary": "获取宠物",
+        "deprecated": false,
+        "description": "根据唯一 ID 返回一只宠物。",
+        "operationId": "getPetById",
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "form_true",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": {
+              "str": "str_v",
+              "int": "11",
+              "num": "1.1",
+              "null": "null",
+              "array": [
+                "array1",
+                "array2"
+              ],
+              "any": "aaa",
+              "model": {
+                "id": 21,
+                "username": "aaa",
+                "firstName": "aa",
+                "lastName": "a",
+                "email": "mg0iuc90@21cn.com",
+                "password": "ZSV7CFB2jJsCGfX",
+                "phone": "033 9588 0529",
+                "userStatus": -1
+              },
+              "obj": {
+                "obj1": 1,
+                "obj2": 2
+              }
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "str": {
+                  "type": "string"
+                },
+                "int": {
+                  "type": "integer"
+                },
+                "num": {
+                  "type": "number"
+                },
+                "null": {
+                  "type": "null"
+                },
+                "array": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "any": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "boolean",
+                    "array",
+                    "object",
+                    "number",
+                    "null"
+                  ]
+                },
+                "model": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "obj": {
+                  "type": "object",
+                  "properties": {
+                    "obj1": {
+                      "type": "string"
+                    },
+                    "obj2": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "obj1",
+                    "obj2"
+                  ]
+                }
+              },
+              "required": [
+                "str",
+                "int",
+                "num",
+                "null",
+                "array",
+                "any",
+                "model",
+                "obj"
+              ]
+            }
+          },
+          {
+            "name": "use_model_obj",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": {
+              "order": "cookietest"
+            },
+            "schema": {
+              "$ref": "#/components/schemas/model_obj"
+            }
+          },
+          {
+            "name": "use_model_str",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "str_v",
+            "schema": {
+              "$ref": "#/components/schemas/model_str"
+            }
+          },
+          {
+            "name": "use_model_int",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": 11,
+            "schema": {
+              "$ref": "#/components/schemas/model_int"
+            }
+          },
+          {
+            "name": "use_model_num",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": 1.1,
+            "schema": {
+              "$ref": "#/components/schemas/model_num"
+            }
+          },
+          {
+            "name": "use_model_bool",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": false,
+            "schema": {
+              "$ref": "#/components/schemas/model_bool"
+            }
+          },
+          {
+            "name": "use_model_array",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": [
+              1,
+              2
+            ],
+            "schema": {
+              "$ref": "#/components/schemas/model_array"
+            }
+          },
+          {
+            "name": "use_model_null",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "$ref": "#/components/schemas/model_null"
+            }
+          },
+          {
+            "name": "use_model_any",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "aaa",
+            "schema": {
+              "$ref": "#/components/schemas/model_any"
+            }
+          },
+          {
+            "name": "form_false",
+            "in": "cookie",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "object"
+            },
+            "explode": false
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "宠物的唯一标识。",
+            "required": true,
+            "example": "1",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "form_false",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "str,str_v,int,11,num,1.1,null,null,array,array1,array2,any,any,model,[object Object],obj,[object Object]",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "str": {
+                  "type": "string"
+                },
+                "int": {
+                  "type": "integer"
+                },
+                "num": {
+                  "type": "number"
+                },
+                "null": {
+                  "type": "null"
+                },
+                "array": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "any": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "boolean",
+                    "array",
+                    "object",
+                    "number",
+                    "null"
+                  ]
+                },
+                "model": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "obj": {
+                  "type": "object",
+                  "properties": {
+                    "obj1": {
+                      "type": "string"
+                    },
+                    "obj2": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "obj1",
+                    "obj2"
+                  ]
+                }
+              },
+              "required": [
+                "str",
+                "int",
+                "num",
+                "null",
+                "array",
+                "any",
+                "model",
+                "obj"
+              ]
+            },
+            "explode": false
+          },
+          {
+            "name": "use_model_obj",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": {
+              "order": "querytest"
+            },
+            "schema": {
+              "$ref": "#/components/schemas/model_obj"
+            }
+          },
+          {
+            "name": "use_model_str",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "str_v",
+            "schema": {
+              "$ref": "#/components/schemas/model_str"
+            }
+          },
+          {
+            "name": "use_model_int",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": 11,
+            "schema": {
+              "$ref": "#/components/schemas/model_int"
+            }
+          },
+          {
+            "name": "use_model_num",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": 1.1,
+            "schema": {
+              "$ref": "#/components/schemas/model_num"
+            }
+          },
+          {
+            "name": "use_model_bool",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": true,
+            "schema": {
+              "$ref": "#/components/schemas/model_bool"
+            }
+          },
+          {
+            "name": "use_model_array",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": [
+              "a",
+              "b"
+            ],
+            "schema": {
+              "$ref": "#/components/schemas/model_array"
+            }
+          },
+          {
+            "name": "use_model_null",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/model_null"
+            }
+          },
+          {
+            "name": "use_model_any",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "aaa",
+            "schema": {
+              "$ref": "#/components/schemas/model_any"
+            }
+          },
+          {
+            "name": "form_true",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "name": "spaceDelimited",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            },
+            "style": "spaceDelimited",
+            "explode": false
+          },
+          {
+            "name": "pipeDelimited",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "object"
+            },
+            "style": "pipeDelimited",
+            "explode": false
+          },
+          {
+            "name": "deepObject",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "object"
+            },
+            "style": "deepObject",
+            "explode": true
+          },
+          {
+            "name": "simple_true",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": {
+              "str": "str_v",
+              "int": "11",
+              "num": "1.1",
+              "null": "null",
+              "array": [
+                "array1",
+                "array2"
+              ],
+              "any": "any",
+              "model": "{\"id\": 21,\"username\": \"aaa\",\"firstName\": \"aa\",\"lastName\": \"a\",\"email\": \"mg0iuc90@21cn.com\",\"password\": \"ZSV7CFB2jJsCGfX\",\"phone\": \"033 9588 0529\",\"userStatus\": -1}",
+              "obj": "{\"obj1\": 1,    \"obj2\": 2}"
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "str": {
+                  "type": "string"
+                },
+                "int": {
+                  "type": "integer"
+                },
+                "num": {
+                  "type": "number"
+                },
+                "null": {
+                  "type": "null"
+                },
+                "array": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "any": {
+                  "type": [
+                    "string",
+                    "integer",
+                    "boolean",
+                    "array",
+                    "object",
+                    "number",
+                    "null"
+                  ]
+                },
+                "model": {
+                  "$ref": "#/components/schemas/User"
+                },
+                "obj": {
+                  "type": "object",
+                  "properties": {
+                    "obj1": {
+                      "type": "string"
+                    },
+                    "obj2": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "obj1",
+                    "obj2"
+                  ]
+                }
+              },
+              "required": [
+                "str",
+                "int",
+                "num",
+                "null",
+                "array",
+                "any",
+                "model",
+                "obj"
+              ]
+            },
+            "explode": true
+          },
+          {
+            "name": "use_model_obj",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": {
+              "order": "headertest"
+            },
+            "schema": {
+              "$ref": "#/components/schemas/model_obj"
+            }
+          },
+          {
+            "name": "use_model_str",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "str",
+            "schema": {
+              "$ref": "#/components/schemas/model_str"
+            }
+          },
+          {
+            "name": "use_model_int",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": 11,
+            "schema": {
+              "$ref": "#/components/schemas/model_int"
+            }
+          },
+          {
+            "name": "use_model_num",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": 1.1,
+            "schema": {
+              "$ref": "#/components/schemas/model_num"
+            }
+          },
+          {
+            "name": "use_model_bool",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": true,
+            "schema": {
+              "$ref": "#/components/schemas/model_bool"
+            }
+          },
+          {
+            "name": "use_model_array",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": [
+              1,
+              2
+            ],
+            "schema": {
+              "$ref": "#/components/schemas/model_array"
+            }
+          },
+          {
+            "name": "use_model_null",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "$ref": "#/components/schemas/model_null"
+            }
+          },
+          {
+            "name": "use_model_any",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "aaa",
+            "schema": {
+              "$ref": "#/components/schemas/model_any"
+            }
+          },
+          {
+            "name": "simple_false",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "encoding": {
+                "form_false": {
+                  "explode": false
+                },
+                "spaceDelimited": {
+                  "style": "spaceDelimited",
+                  "explode": false
+                },
+                "pipeDelimited": {
+                  "style": "pipeDelimited",
+                  "explode": false
+                },
+                "deepObject": {
+                  "style": "deepObject",
+                  "explode": true
+                }
+              },
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "form_false": {
+                    "type": "object",
+                    "properties": {
+                      "str": {
+                        "type": "string"
+                      },
+                      "int": {
+                        "type": "integer"
+                      },
+                      "num": {
+                        "type": "number"
+                      },
+                      "null": {
+                        "type": "null"
+                      },
+                      "array": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "any": {
+                        "type": [
+                          "string",
+                          "integer",
+                          "boolean",
+                          "array",
+                          "object",
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "model": {
+                        "$ref": "#/components/schemas/User"
+                      },
+                      "obj": {
+                        "type": "object",
+                        "properties": {
+                          "obj1": {
+                            "type": "string"
+                          },
+                          "obj2": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "obj1",
+                          "obj2"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "str",
+                      "int",
+                      "num",
+                      "null",
+                      "array",
+                      "any",
+                      "model",
+                      "obj"
+                    ],
+                    "example": "str,str_v,int,11,num,1.1,null,null,array,array1,array2,any,any,model,[object Object],obj,[object Object]"
+                  },
+                  "use_model_obj": {
+                    "$ref": "#/components/schemas/model_obj"
+                  },
+                  "use_model_str": {
+                    "$ref": "#/components/schemas/model_str"
+                  },
+                  "use_model_int": {
+                    "$ref": "#/components/schemas/model_int"
+                  },
+                  "use_model_num": {
+                    "$ref": "#/components/schemas/model_num"
+                  },
+                  "use_model_bool": {
+                    "$ref": "#/components/schemas/model_bool"
+                  },
+                  "use_model_array": {
+                    "$ref": "#/components/schemas/model_array"
+                  },
+                  "use_model_any": {
+                    "$ref": "#/components/schemas/model_any"
+                  },
+                  "use_model_null": {
+                    "$ref": "#/components/schemas/model_null"
+                  },
+                  "spaceDelimited": {
+                    "type": "object",
+                    "example": ""
+                  },
+                  "pipeDelimited": {
+                    "type": "object",
+                    "example": ""
+                  },
+                  "deepObject": {
+                    "type": "object",
+                    "example": ""
+                  },
+                  "form_true": {
+                    "type": "object",
+                    "example": ""
+                  }
+                }
+              },
+              "example": {
+                "use_model_obj": {
+                  "order": "bodytest"
+                },
+                "use_model_str": "str_v",
+                "use_model_int": 11,
+                "use_model_num": 1.1,
+                "use_model_bool": false,
+                "use_model_array": [
+                  1,
+                  2
+                ],
+                "use_model_any": "aaa",
+                "use_model_null": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "操作成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pet"
+                },
+                "example": {
+                  "id": 100,
+                  "category": {
+                    "id": 101,
+                    "name": "dog"
+                  },
+                  "name": "Luna",
+                  "photoUrls": [
+                    "https://loremflickr.com/400/400?lock=2557291284045546",
+                    "https://loremflickr.com/400/400?lock=1603075073377479"
+                  ],
+                  "tags": [
+                    {
+                      "id": 15,
+                      "name": "Dalmatian"
+                    }
+                  ],
+                  "status": "available"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer_token": []
+          }
+        ]
+      }
+    }
+  },
+  "webhooks": {},
+  "components": {
+    "schemas": {
+      "Pet": {
+        "type": "object",
+        "description": "宠物商店中的动物信息。",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "唯一宠物标识。"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "name": {
+            "type": "string",
+            "description": "宠物名称",
+            "examples": [
+              "doggie"
+            ]
+          },
+          "photoUrls": {
+            "type": "array",
+            "description": "宠物图片 URL 列表。",
+            "xml": {
+              "wrapped": true
+            },
+            "items": {
+              "type": "string",
+              "xml": {
+                "name": "photoUrl"
+              }
+            }
+          },
+          "tags": {
+            "type": "array",
+            "description": "宠物关联标签。",
+            "xml": {
+              "wrapped": true
+            },
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
+          },
+          "status": {
+            "type": "string",
+            "description": "宠物在商店中的状态",
+            "enum": [
+              "available",
+              "pending",
+              "sold"
+            ]
+          }
+        },
+        "xml": {
+          "name": "Pet"
+        }
+      },
+      "Category": {
+        "type": "object",
+        "description": "宠物所属分类。",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "类别唯一 ID。"
+          },
+          "name": {
+            "type": "string",
+            "description": "类别名称。"
+          }
+        },
+        "xml": {
+          "name": "Category"
+        }
+      },
+      "Tag": {
+        "type": "object",
+        "description": "与宠物关联的标签。",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "标签唯一 ID。"
+          },
+          "name": {
+            "type": "string",
+            "description": "标签值。"
+          }
+        },
+        "xml": {
+          "name": "Tag"
+        }
+      },
+      "User": {
+        "type": "object",
+        "description": "用户账号信息。",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "用户唯一标识。"
+          },
+          "username": {
+            "type": "string",
+            "description": "用户名。"
+          },
+          "firstName": {
+            "type": "string",
+            "description": "用户名。"
+          },
+          "lastName": {
+            "type": "string",
+            "description": "用户姓。"
+          },
+          "email": {
+            "type": "string",
+            "description": "用户邮箱。"
+          },
+          "password": {
+            "type": "string",
+            "description": "用户密码（哈希值）。"
+          },
+          "phone": {
+            "type": "string",
+            "description": "用户手机号。"
+          },
+          "userStatus": {
+            "type": "integer",
+            "description": "用户状态（0:正常，1:管理员，-1:已封禁）",
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              -1
+            ]
+          }
+        },
+        "xml": {
+          "name": "User"
+        }
+      },
+      "model_obj": {
+        "description": "订单资源链接。",
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "string",
+            "format": "uri",
+            "description": "该订单相关的 URL。",
+            "examples": [
+              "https://api.example.com/orders/1725ff48-ab45-4bb5-9d02-88745177dedb"
+            ]
+          }
+        }
+      },
+      "model_str": {
+        "type": "string"
+      },
+      "model_int": {
+        "type": "integer"
+      },
+      "model_num": {
+        "type": "number"
+      },
+      "model_bool": {
+        "type": "boolean"
+      },
+      "model_array": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "model_null": {
+        "type": "null"
+      },
+      "model_any": {
+        "type": [
+          "string",
+          "integer",
+          "boolean",
+          "array",
+          "object",
+          "number",
+          "null"
+        ]
+      }
+    },
+    "responses": {},
+    "securitySchemes": {
+      "bearer_token": {
+        "scheme": "bearer",
+        "type": "http"
+      }
+    }
+  },
+  "servers": [],
+  "security": []
+}
