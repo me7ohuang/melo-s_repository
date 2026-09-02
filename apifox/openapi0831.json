@@ -21,64 +21,6 @@
   ],
   "paths": {
     "/pets/{id}": {
-      "get": {
-        "summary": "获取宠物",
-        "deprecated": false,
-        "description": "根据唯一 ID 返回一只宠物。",
-        "operationId": "getPetById",
-        "tags": [
-          "pet"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "宠物的唯一标识。",
-            "required": true,
-            "example": "1",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "操作成功",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                },
-                "example": {
-                  "id": 100,
-                  "category": {
-                    "id": 101,
-                    "name": "dog"
-                  },
-                  "name": "Luna",
-                  "photoUrls": [
-                    "https://loremflickr.com/400/400?lock=2557291284045546",
-                    "https://loremflickr.com/400/400?lock=1603075073377479"
-                  ],
-                  "tags": [
-                    {
-                      "id": 15,
-                      "name": "Dalmatian"
-                    }
-                  ],
-                  "status": "available"
-                }
-              }
-            },
-            "headers": {}
-          }
-        },
-        "security": [
-          {
-            "bearer_token": []
-          }
-        ]
-      },
       "put": {
         "summary": "更新宠物",
         "deprecated": false,
@@ -209,6 +151,64 @@
               "write:pets",
               "read:pets"
             ]
+          }
+        ]
+      },
+      "get": {
+        "summary": "获取宠物",
+        "deprecated": false,
+        "description": "根据唯一 ID 返回一只宠物。",
+        "operationId": "getPetById",
+        "tags": [
+          "pet"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "宠物的唯一标识。",
+            "required": true,
+            "example": "1",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "操作成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pet"
+                },
+                "example": {
+                  "id": 100,
+                  "category": {
+                    "id": 101,
+                    "name": "dog"
+                  },
+                  "name": "Luna",
+                  "photoUrls": [
+                    "https://loremflickr.com/400/400?lock=2557291284045546",
+                    "https://loremflickr.com/400/400?lock=1603075073377479"
+                  ],
+                  "tags": [
+                    {
+                      "id": 15,
+                      "name": "Dalmatian"
+                    }
+                  ],
+                  "status": "available"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer_token": []
           }
         ]
       }
